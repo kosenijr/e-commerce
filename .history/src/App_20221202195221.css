@@ -1,0 +1,27 @@
+.App {
+}
+
+.App-header {
+}
+
+.flexing {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sub-header-1 {
+  background-color: lightgreen;
+  color: white;
+}
+
+.subheader-2 {
+  background-color: lightgreen;
+  color: white;
+}
+
+.subheader-3 {
+  background-color: lightgreen;
+  color: white;
+}
+
+
