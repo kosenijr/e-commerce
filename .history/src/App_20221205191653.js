@@ -21,7 +21,7 @@ function App() {
       </header>
       <body>
         <div className="jumbotron">
-          <span>jambotron</span>
+        <span>jambotron</span>
         </div>
       </body>
     </div>

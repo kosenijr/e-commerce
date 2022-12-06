@@ -20,9 +20,8 @@ function App() {
 
       </header>
       <body>
-        <div className="jumbotron">
-          <span>jambotron</span>
-        </div>
+        div.
+        <span>jambotron</span>
       </body>
     </div>
   );
