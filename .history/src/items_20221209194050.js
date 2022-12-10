@@ -33,13 +33,13 @@ const itemsList = [
         "item": "Laptop",
         "price": 499.99,
         "category": "General Essentials",
-        "description": "512GB SSD; 16GB memory to run multiple programs; Windows 11 Pro operating system"
+        "description": "512GB SSD; "
     },
     {
         "item": "Printer",
         "price": 300.00,
         "category": "General Essentials",
-        "description": "Faster color printing; automatic 2-sided scanning; enhanced security features"
+        "description": 
     }
 ]
 

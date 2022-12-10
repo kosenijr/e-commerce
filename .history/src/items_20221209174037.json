@@ -1,0 +1,47 @@
+[
+    {
+        "item": "Staples",
+        "price": 12.99,
+        "category": "General Essentials",
+        "description": "Staples Standard Staples, 1/4\" Leg Length, 5000/Box, 5/Pack; 20-page capacity"
+    },
+    {
+        "item": "Three-Ring Binder",
+        "price": ,
+        "category": "School Essentials",
+        "description": 
+    },
+    {
+        "item": "Metal Organizer Tray",
+        "price": ,
+        "category": "Office Essentials",
+        "description": 
+    },
+    {
+        "item": "Pencils",
+        "price": ,
+        "category": "School Essentials",
+        "description": 
+    },
+    {
+        "item": "Pens",
+        "price": ,
+        "category": "Office Essentials",
+        "description": 
+    },
+    {
+        "item": "Laptop",
+        "price": ,
+        "category": "General Essentials",
+        "description": 
+    },
+    {
+        "item": "Printer",
+        "price": ,
+        "category": "General Essentials",
+        "description": 
+    }
+    
+
+    
+]

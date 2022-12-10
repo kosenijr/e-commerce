@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "item": "Staples",
+        "price": "$4.00",
+        "category": "Essentials",
+        "description": "Needed for"
+    },
+    {
+        "id": ,
+        "price": ,
+        "category": ,
+        "description": 
+    },    {
+        "id": ,
+        "price": ,
+        "category": ,
+        "description": 
+    },
+    
+    {
+        "id": ,
+        "price": ,
+        "category": ,
+        "description": 
+    },
+    {
+        "id": ,
+        "price": ,
+        "category": ,
+        "description": 
+    },
+    {
+        "id": ,
+        "price": ,
+        "category": ,
+        "description": 
+    },
+    {
+        "id": ,
+        "price": ,
+        "category": ,
+        "description": 
+    },
+
+    
+]

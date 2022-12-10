@@ -39,7 +39,7 @@ const itemsList = [
         "item": "Printer",
         "price": 300.00,
         "category": "General Essentials",
-        "description": "Faster color printing; automatic 2-sided scanning; enhanced security features"
+        "description": "faster color printing; automatic 2-sided scanning; enhanced security features"
     }
 ]
 

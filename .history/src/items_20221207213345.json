@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "item": "Staples",
+        "price": "$4.00",
+        "category": "Essentials",
+        "description": "Needed for creating pamphlets and attachments"
+    },
+    {
+        "id": ,
+        
+        "price": ,
+        "category": ,
+        "description": 
+    },    {
+        "id": ,
+        "price": ,
+        "category": ,
+        "description": 
+    },
+    
+    {
+        "id": ,
+        "price": ,
+        "category": ,
+        "description": 
+    },
+    {
+        "id": ,
+        "price": ,
+        "category": ,
+        "description": 
+    },
+    {
+        "id": ,
+        "price": ,
+        "category": ,
+        "description": 
+    },
+    {
+        "id": ,
+        "price": ,
+        "category": ,
+        "description": 
+    },
+
+    
+]

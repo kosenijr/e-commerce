@@ -27,19 +27,19 @@ const itemsList = [
         "item": "Pens",
         "price": 12.00,
         "category": "Office Essentials",
-        "description": "60-count pack; 1.0mm medium point tip creates clear lines for note-taking, sketching or writing lists"
+        "description": "60-count pack; 1.0mm medium point tip creates clear lines for note-taking, sketching or writing lists "
     },
     {
         "item": "Laptop",
         "price": 499.99,
         "category": "General Essentials",
-        "description": "512GB SSD; 16GB memory to run multiple programs; Windows 11 Pro operating system"
+        "description": 
     },
     {
         "item": "Printer",
         "price": 300.00,
         "category": "General Essentials",
-        "description": "Faster color printing; automatic 2-sided scanning; enhanced security features"
+        "description": 
     }
 ]
 

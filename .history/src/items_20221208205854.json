@@ -1,0 +1,47 @@
+[
+    {
+        "item": "Staples",
+        "price": "$4.00",
+        "category": "General Essentials",
+        "description": "Needed for creating pamphlets and attachments"
+    },
+    {
+        "item": "Three-Ring Binder",
+        "price": ,
+        "category": "School Essentials",
+        "description": 
+    },
+    {
+        "item": "Stackable Metal Tray",
+        "price": ,
+        "category": "Office Essentials",
+        "description": 
+    },
+    {
+        "item": "Pencils",
+        "price": ,
+        "category": "School Essentials",
+        "description": 
+    },
+    {
+        "item": "Pens",
+        "price": ,
+        "category": "Office Essentials",
+        "description": 
+    },
+    {
+        "item": "Laptop",
+        "price": ,
+        "category": "General Essentials",
+        "description": 
+    },
+    {
+        "item": "Printer",
+        "price": ,
+        "category": "General Essentials",
+        "description": 
+    }
+    
+
+    
+]
