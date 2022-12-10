@@ -27,5 +27,6 @@
 .jumbotron {
   height: 10rem;
   background-color: blue;
+  color: white;
   text-align: center;
 }

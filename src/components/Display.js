@@ -1,12 +1,13 @@
-import Items from './Items'
+import itemsList from './Items'
+import styles from '../styles/Display.css'
 
 
 const Display = () => {
     return (
-        <div className="display-container">
-            <h1 className="display-header">Today's Selection</h1>
-            <div className="display-section">
-                
+        <div className={styles["display-container"]}>
+            <h7 className={styles["display-header"]}>Today's Selection</h7>
+            <div className={styles["display-section"]}>
+
             </div>
         </div>
     )
