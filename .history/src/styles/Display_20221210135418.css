@@ -1,0 +1,12 @@
+.display-container {
+  
+    height: 10rem;
+  background-color: green;
+  
+}
+
+.display-header {
+  /* text-align: center; */
+  justify-content: center;
+  color: white;
+}

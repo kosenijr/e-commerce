@@ -1,0 +1,11 @@
+.display-container {
+  display: flex;
+  height: 10rem;
+  background-color: green;
+}
+
+.display-header {
+  /* text-align: center; */
+  justify-content: space-around;
+  color: white;
+}
