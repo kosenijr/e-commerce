@@ -10,8 +10,11 @@ const Navbar = () => {
                 <span>cart icon</span>
             </div>
             <div className='sub-header-2 flexing'>
-                <span>Our Products</span>
+                <span></span>
                 <span>Checkout</span>
+            </div>
+            <div className='sub-header-3 flexing'>
+                <span>help line</span>
             </div>
 
         </header>

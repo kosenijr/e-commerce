@@ -7,11 +7,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/products' element={<Products />} />
-          <Route path='/cart' element={<Cart />} />
-        </Routes>
+          
+      </Routes>
       </BrowserRouter>
+      <Home />
     </div>
   );
 }

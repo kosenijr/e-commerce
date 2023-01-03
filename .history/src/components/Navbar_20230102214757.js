@@ -13,6 +13,9 @@ const Navbar = () => {
                 <span>Our Products</span>
                 <span>Checkout</span>
             </div>
+            <div className='sub-header-3 flexing'>
+                <span>help line</span>
+            </div>
 
         </header>
     )
