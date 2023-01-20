@@ -1,12 +1,12 @@
 import Layout from './Layout'
 import Display from './Display'
-import Jumbotron from './Jumbotron'
+import Form from './Form'
 
 
 const Home = () => {
     return (
         <Layout >
-            <Jumbotron />
+            <Form />
             <Display />
         </Layout >
 

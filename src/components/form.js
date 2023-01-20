@@ -1,9 +1,9 @@
 
 
-const Jumbotron = () => {
+const Form = () => {
     return (
-        <div className="jumbotron"><span>City Photo</span></div>
+        <div className="asp-form"><span>City Photo</span></div>
     )
 }
 
-export default Jumbotron
+export default Form
