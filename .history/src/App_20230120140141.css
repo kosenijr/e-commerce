@@ -1,0 +1,36 @@
+.App {
+  background-image: url("../src/1st_Set_of_Images/the-plaza-7.jpg");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* .App-header {
+} */
+
+/* .flexing {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sub-header-1 {
+  background-color: lightgreen;
+  color: white;
+}
+
+.sub-header-2 {
+  background-color: white;
+  color: black;
+}
+
+.sub-header-3 {
+  background-color: yellow;
+  color: blue;
+}
+
+.jumbotron {
+  height: 10rem;
+  background-color: blue;
+  color: white;
+  text-align: center;
+} */
