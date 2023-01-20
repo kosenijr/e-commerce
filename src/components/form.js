@@ -1,8 +1,14 @@
-
+import React from 'react'
+import '../styles/Form.css'
 
 const Form = () => {
     return (
-        <div className="asp-form"><span>City Photo</span></div>
+        <div className="form-container">
+            <h3 className="form-header">
+                Never Miss Alternate-Side Parking Again!
+            </h3>
+
+        </div>
     )
 }
 
