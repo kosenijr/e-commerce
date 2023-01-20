@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+=======
+import './styles/App.css';
+>>>>>>> branch-1
 import Home from './components/Home'
 
 function App() {
@@ -17,3 +21,4 @@ function App() {
 }
 
 export default App;
+;

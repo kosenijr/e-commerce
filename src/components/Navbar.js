@@ -1,8 +1,9 @@
-
+import Logo from './Logo'
 
 const Navbar = () => {
     return (
         <header className="App-header">
+<<<<<<< HEAD
             <div className='sub-header-1 flexing'>
                 <span>logo</span>
                 <span>user greeting</span>
@@ -14,8 +15,12 @@ const Navbar = () => {
                 <span>Checkout</span>
             </div>
 
+=======
+            <Logo />
+>>>>>>> branch-1
         </header>
     )
+
 }
 
 

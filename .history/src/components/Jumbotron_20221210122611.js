@@ -1,6 +1,0 @@
-
-
-const Jumbotron = () => {
-    return (
-        <div)
-}

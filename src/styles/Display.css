@@ -1,10 +1,13 @@
-/* .display-container {
-  height: 10rem;
-  background-color: green;
+.call-to-action {
+  margin: 20% 5% 1% 5%;
+  padding-right: 60%;
 }
 
-.display-header {
-  text-align: center;
+.call-to-action-button {
   color: white;
-} */
-
+  background-color: green;
+  margin-left: 5%;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+}
