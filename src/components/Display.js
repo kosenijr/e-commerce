@@ -1,13 +1,6 @@
 import styles from '../styles/Global.module.css'
 import '../styles/Display.css'
 
-<<<<<<< HEAD
-
-
-const log = console.log;
-log(Items);
-=======
->>>>>>> branch-1
 const Display = () => {
     return (
         <div className={styles['display-container']}>
