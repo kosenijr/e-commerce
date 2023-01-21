@@ -1,0 +1,10 @@
+.form-container {
+}
+
+.form-header {
+  text-align: center;
+  font-family: Imprint MT Shadow;
+  font-size: 2rem;
+  background-color: black;
+  content: fit-content;
+}

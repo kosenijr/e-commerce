@@ -1,0 +1,14 @@
+.form-container {
+  display: block;
+}
+
+.form-header {
+  align-items: center;
+  font-family: Imprint MT Shadow;
+  font-size: 2rem;
+  background-color: black;
+  width: fit-content;
+  block-size: fit-content;
+  padding: 5px;
+  display: inline-block;
+}
