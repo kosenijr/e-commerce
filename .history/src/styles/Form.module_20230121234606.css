@@ -1,0 +1,27 @@
+.form-container {
+  display: grid;
+}
+
+.form-header-1 {
+  display: block; /* must switch to display: none  through state*/
+  margin: 5% auto;
+  font-family: Imprint MT Shadow;
+  font-size: 2rem;
+  width: fit-content;
+  block-size: fit-content;
+  padding: 0 5px;
+  border-radius: 30px;
+  color: white;
+}
+
+.form-header-2 {
+  display: none; /* must switch to display: block through state*/
+  margin: 5% 0 5% 60%;
+  font-family: Imprint MT Shadow;
+  font-size: 2rem;
+  width: fit-content;
+  block-size: fit-content;
+  padding: 0 1px;
+  border-radius: 30px;
+  color: white;
+}

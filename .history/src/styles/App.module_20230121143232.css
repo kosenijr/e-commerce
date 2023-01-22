@@ -1,0 +1,11 @@
+.App {
+  background-image: url("../../src/images/the-plaza-8.jpg");
+  /* experimental variegation */
+  background-color: rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  7pacity: 0.6
+
+}
