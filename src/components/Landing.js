@@ -3,7 +3,7 @@ import Display from './Display'
 import Form from './Form'
 
 
-const Home = () => {
+const Landing = () => {
     return (
         <Layout >
             <Form />
@@ -12,4 +12,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Landing
