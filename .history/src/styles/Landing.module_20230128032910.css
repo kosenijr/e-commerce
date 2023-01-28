@@ -1,0 +1,10 @@
+.display-form-header {
+
+}
+
+.display-form-intake {
+transition-timing-function: ease-out;
+  transition: 0.2s;
+  transform: translateY(130%);
+}
+
