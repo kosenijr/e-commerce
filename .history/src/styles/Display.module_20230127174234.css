@@ -1,0 +1,32 @@
+.display-container {
+  display: flex;
+  font-family: "sans serif font";
+}
+
+.display-statement {
+  position: relative;
+}
+
+.display-header {
+  font-family: Imprint MT Shadow;
+  font-size: 2rem;
+  width: fit-content;
+  border-radius: 30px;
+  color: white;
+}
+
+.display-section {
+  margin: 30% 9% 0 0;
+}
+
+.call-to-action {
+  color: white;
+}
+
+.call-to-action-button {
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+}

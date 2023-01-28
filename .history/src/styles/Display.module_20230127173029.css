@@ -1,0 +1,29 @@
+.display-container {
+  display: flex;
+  /* display: none; */
+  font-family: "sans serif font";
+}
+
+.call-to-action {
+  margin: 30% 5% 1% 5%;
+  padding-right: 60%;
+  color: white;
+}
+
+.call-to-action-button {
+  color: white;
+  background-color: green;
+  margin-left: 5%;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+}
+
+.display-statement {
+  /* display: flex; */
+  /* position: absolute; */
+  justify-content: right;
+  /* width: 100vw; */
+}
+
+
