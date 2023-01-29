@@ -1,0 +1,6 @@
+.nav-container {
+  display: flex;
+  background-color: blue;
+  color: white;
+  position: absolute;
+}
