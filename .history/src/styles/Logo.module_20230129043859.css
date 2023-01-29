@@ -1,0 +1,11 @@
+.logo-container {
+width: 30rem;
+
+}
+
+#asp-logo {
+  background-image: url("../tf_logo/TicketFree.jpg");
+  background-repeat: no-repeat;
+  width: 10vw;
+  height: 10vh;
+}
