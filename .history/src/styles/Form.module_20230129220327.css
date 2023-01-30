@@ -11,18 +11,22 @@
 
 .form-header-off {
   display: none;
+  /* must switch to display: block through state*/
+  /* need transitional css set up properly here or through header-1*/
 }
 
 .form-header-on {
-  margin: 2% 0 0 60%;
+  margin: 5% 0 5% 60%;
   font-family: Imprint MT Shadow;
   font-size: 2rem;
   color: white;
 }
 
 .form-intake-on {
+  /* display: none; */
   color: white;
-  margin: 14vh 12vw 0 0;
+  /* margin-left: 35%; */
+  margin: 21vh 12vw 0 0;
 }
 
 .form-intake-off {
@@ -75,6 +79,4 @@ input[placeholder] {
 button[type="submit"] {
   border-radius: 25px;
   margin: 2vh 2vw 0 0vw;
-  color: white;
-  background-color: green;
 }

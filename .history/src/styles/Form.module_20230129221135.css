@@ -75,6 +75,5 @@ input[placeholder] {
 button[type="submit"] {
   border-radius: 25px;
   margin: 2vh 2vw 0 0vw;
-  color: white;
   background-color: green;
 }
