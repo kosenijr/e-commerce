@@ -1,8 +1,6 @@
 .form-container {
   display: flex;
   justify-content: right;
-  font-family: "Raleway";
-  line-height: 2
 }
 
 .form-statement {
@@ -17,7 +15,7 @@
 
 .form-header-on {
   margin: 2% 0 0 60%;
-  /* font-family: Imprint MT Shadow; */
+  font-family: Imprint MT Shadow;
   font-size: 2rem;
   color: white;
 }
@@ -74,12 +72,9 @@ input[placeholder] {
   padding-left: 5px;
 }
 
-.state-zip {
-  margin-bottom: 25vh; /* controls space above button div*/
-}
-
 button[type="submit"] {
   border-radius: 25px;
+  margin-top: 40%;
   color: white;
   background-color: green;
 }

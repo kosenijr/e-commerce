@@ -1,12 +1,12 @@
 .form-container {
   display: flex;
   justify-content: right;
-  font-family: "Raleway";
-  line-height: 2
+  font-family: "Raleway"
 }
 
 .form-statement {
   display: flex;
+  font-family: "Raleway";
   position: absolute;
   width: 100vw;
 }
@@ -74,12 +74,9 @@ input[placeholder] {
   padding-left: 5px;
 }
 
-.state-zip {
-  margin-bottom: 25vh; /* controls space above button div*/
-}
-
 button[type="submit"] {
   border-radius: 25px;
+  margin-top: 20%;
   color: white;
   background-color: green;
 }

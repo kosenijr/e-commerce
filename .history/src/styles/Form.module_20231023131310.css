@@ -74,12 +74,9 @@ input[placeholder] {
   padding-left: 5px;
 }
 
-.state-zip {
-  margin-bottom: 25vh; /* controls space above button div*/
-}
-
 button[type="submit"] {
   border-radius: 25px;
+  margin-top: 20%;
   color: white;
   background-color: green;
 }

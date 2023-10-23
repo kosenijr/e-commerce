@@ -150,13 +150,6 @@ const Form = ({ onFormSection }) => {
             </div>
           </div>
         </div>
-
-        {/* terms and conditions div */}
-        <div>
-            {/* needs checkboxes with hyperlinks to all necessary user documentation */}
-
-        </div>
-        
         <div className={styles["submit-button"]}>
           <button type="submit" onClick={handleSubmit}>
             Submit

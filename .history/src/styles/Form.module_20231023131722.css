@@ -75,7 +75,7 @@ input[placeholder] {
 }
 
 .state-zip {
-  margin-bottom: 25vh; /* controls space above button div*/
+  margin-bottom: 20vh; /* controls space above button div*/
 }
 
 button[type="submit"] {
