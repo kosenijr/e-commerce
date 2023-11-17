@@ -80,24 +80,18 @@ input[placeholder] {
 
 .policies-div {
   margin: 20vh 0 5vh 0;
-  /* width: 12vw; */
+  /* width: 40vw; */
 }
 .policies-div input {
-  width: 5%;
-  float: left;
-  margin: 0;
-
+  width: 50%;
 }
 
 .policies-div p {
-  width: 20%;
-  float: left;
-  margin: 0
+  width: 50%
 }
 
 
 button[type="submit"] {
-  
   border-radius: 25px;
   color: white;
   background-color: green;

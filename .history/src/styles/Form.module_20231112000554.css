@@ -79,25 +79,11 @@ input[placeholder] {
 } */
 
 .policies-div {
-  margin: 20vh 0 5vh 0;
-  /* width: 12vw; */
-}
-.policies-div input {
-  width: 5%;
-  float: left;
-  margin: 0;
-
-}
-
-.policies-div p {
-  width: 20%;
-  float: left;
-  margin: 0
+  margin: 20vh 0 10vh 0;
 }
 
 
 button[type="submit"] {
-  
   border-radius: 25px;
   color: white;
   background-color: green;

@@ -154,8 +154,7 @@ const Form = ({ onFormSection }) => {
         {/* terms and conditions div */}
         <div className={styles["policies-div"]}>
             {/* needs checkboxes with hyperlinks to all necessary user documentation */}
-            <input type="checkbox"/>
-            <p>I have read and agree to the Terms of Service, Privacy Policy, and ... . I understand and consent to the collection, use, and processing of my personal information as outlined in the provided documents. By clicking the checkbox,' I acknowledge that I am bound by these terms and conditions and that failure to comply may result in the termination of my account or access to the services.</p>
+            <p>I would like to receive all types of documentation</p>
 
         </div>
         
