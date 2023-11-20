@@ -14,10 +14,10 @@ const subsc = process.env.SUBSCRIPTION_KEY;
 // log(subsc);
 
 // set up parameters
-const params = {
+ const params = {
   fromdate: date,
-  todate: date,
-};
+  todate: date
+ };
 //  check params
 // log(params.key1, params.key2);
 
@@ -26,8 +26,8 @@ const params = {
 
 // combine params
 const queryString = Object.keys(params)
-  .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-  .join("&");
+.map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+.join("&");
 
 // log(params.key1)
 log(queryString);
@@ -48,16 +48,18 @@ fetch(urlWithParams, {
   method: "GET",
   withCredentials: true,
   headers: {
-    "Ocp-Apim-Subscription-Key": subsc,
-  },
+    "Ocp-Apim-Subscription-Key": subsc
+
+  }
 })
-  .then((res) => res.json())
-  .then((data) => log(data, data.days[0].items))
-  .catch((error) => console.error(`Error: ${error}`));
+.then(res => res.json())
+.then(data => log(data))
+.catch(error => console.error(`Error: ${error}`));
 
 // are we listening?
 app.listen(port, function () {
   console.log(`Server is listening on Port: ${port}.`);
 });
+
 
 // run nodemon: npm run watch.

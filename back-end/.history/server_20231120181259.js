@@ -10,32 +10,21 @@ const basicURL = process.env.URL_311;
 let date = new Date();
 date = date.toDateString();
 // log(date);
-const subsc = process.env.SUBSCRIPTION_KEY;
-// log(subsc);
 
 // set up parameters
-const params = {
-  fromdate: date,
-  todate: date,
-};
+ const params = {
+  key1: date,
+  key2: date,
+  subsc: subKey
+ };
 //  check params
-// log(params.key1, params.key2);
+log(params.key, params.subsc);
 
 // logging env
 // log(process.env.URL_311, process.env.SUBSCRIPTION_KEY)
 
 // combine params
 const queryString = Object.keys(params)
-  .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-  .join("&");
-
-// log(params.key1)
-log(queryString);
-
-// combine url
-const urlWithParams = `${basicURL}?${queryString}`;
-
-log(urlWithParams);
 
 // use cors
 app.use(cors());
@@ -44,20 +33,12 @@ app.use(cors());
 // variable
 
 // fetching
-fetch(urlWithParams, {
-  method: "GET",
-  withCredentials: true,
-  headers: {
-    "Ocp-Apim-Subscription-Key": subsc,
-  },
-})
-  .then((res) => res.json())
-  .then((data) => log(data, data.days[0].items))
-  .catch((error) => console.error(`Error: ${error}`));
+
 
 // are we listening?
 app.listen(port, function () {
   console.log(`Server is listening on Port: ${port}.`);
 });
+
 
 // run nodemon: npm run watch.

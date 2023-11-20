@@ -52,7 +52,7 @@ fetch(urlWithParams, {
   },
 })
   .then((res) => res.json())
-  .then((data) => log(data, data.days[0].items))
+  .then((data) => log(data, data.days))
   .catch((error) => console.error(`Error: ${error}`));
 
 // are we listening?
