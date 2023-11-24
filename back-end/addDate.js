@@ -11,7 +11,7 @@ const day = inputDate % 100;
 
 // formatted the date
 const formattedDate = new Date(year, month - 1, day);
-log(formattedDate);
+// log(formattedDate);
 
 // set up arrays for days and months
 const weekDays = [
@@ -45,10 +45,11 @@ const weekDayName = weekDays[formattedDate.getDay()];
 const monthName = months[formattedDate.getMonth()];
 
 // do a check
-log(weekDayName, monthName);
+// log(weekDayName, monthName);
 
 // full Date
 const fullDate = `${weekDayName}, ${monthName} ${day}, ${year}`;
-log(fullDate);
+// log(fullDate);
 
-module.export = fullDate;
+// exporting fullDate variable
+module.exports = fullDate;

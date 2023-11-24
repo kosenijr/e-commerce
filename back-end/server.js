@@ -1,5 +1,5 @@
 // imports
-const addDate = require("./addDate");
+const fullDate = require("./addDate");
 
 // requirements
 require("dotenv").config();
@@ -19,6 +19,9 @@ let date2 = new Date();
 date2.setDate(date2.getDate() + 1);
 date2 = date2.toDateString();
 // log(date1, date2);
+
+// check space for export
+log(fullDate);
 
 // use cors
 app.use(cors());
