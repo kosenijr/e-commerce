@@ -51,11 +51,9 @@ const day = inputDate % 100;
 const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-// log(year, month, day);
-// log(...daysOfWeek, ...months)
 
-const dayOfWeek = daysOfWeek[new Date(`${year}-${month}-${day + 1}`).getDay()];
-log(dayOfWeek);
+log(year, month, day);
+log(...daysOfWeek, ...months)
 
 // fetching
 fetch(urlWithParams, {

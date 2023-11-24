@@ -48,13 +48,13 @@ const month = Math.floor((inputDate % 10000) / 100);
 const day = inputDate % 100;
 
 // set up arrays for days and months
-const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday, "Sunday"];
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 // log(year, month, day);
 // log(...daysOfWeek, ...months)
 
-const dayOfWeek = daysOfWeek[new Date(`${year}-${month}-${day + 1}`).getDay()];
+const dayOfWeek = daysOfWeek[new Date(`${year}-${month}-${day}`).getDay()];
 log(dayOfWeek);
 
 // fetching

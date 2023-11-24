@@ -42,20 +42,12 @@ const urlWithParams = `${basicURL}?${queryString}`;
 // use cors
 app.use(cors());
 
-// extract year, month, and day from input
-const year = Math.floor(inputDate/10000);
+// set up arrays for days and months
+const year = Math.floor(inputDate/100);
 const month = Math.floor((inputDate % 10000) / 100);
 const day = inputDate % 100;
 
-// set up arrays for days and months
-const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-// log(year, month, day);
-// log(...daysOfWeek, ...months)
-
-const dayOfWeek = daysOfWeek[new Date(`${year}-${month}-${day + 1}`).getDay()];
-log(dayOfWeek);
+log(year, month, day);
 
 // fetching
 fetch(urlWithParams, {

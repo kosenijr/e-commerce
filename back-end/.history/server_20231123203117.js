@@ -54,7 +54,7 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 // log(year, month, day);
 // log(...daysOfWeek, ...months)
 
-const dayOfWeek = daysOfWeek[new Date(`${year}-${month}-${day + 1}`).getDay()];
+const dayOfWeek = daysOfWeek[new Date(`${year}-${month}-${day - 1}`).getDay()];
 log(dayOfWeek);
 
 // fetching
