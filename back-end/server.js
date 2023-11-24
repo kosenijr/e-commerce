@@ -14,7 +14,7 @@ date2 = date2.toDateString();
 // log(date1, date2);
 const subsc = process.env.SUBSCRIPTION_KEY;
 // log(subsc);
-const inputDate=20231123;
+const inputDate = 20231124;
 
 // set up parameters
 const params = {
@@ -43,19 +43,47 @@ const urlWithParams = `${basicURL}?${queryString}`;
 app.use(cors());
 
 // extract year, month, and day from input
-const year = Math.floor(inputDate/10000);
+const year = Math.floor(inputDate / 10000);
 const month = Math.floor((inputDate % 10000) / 100);
 const day = inputDate % 100;
 
+// formatted the date
+const formattedDate = new Date(year, month - 1, day);
+log(formattedDate);
+
 // set up arrays for days and months
-const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const weekDays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 
 // log(year, month, day);
-// log(...daysOfWeek, ...months)
 
-const dayOfWeek = daysOfWeek[new Date(`${year}-${month}-${day + 1}`).getDay()];
-log(dayOfWeek);
+// get weekday and month names
+const weekDayName = weekDays[formattedDate.getDay()];
+const monthName = months[formattedDate.getMonth()];
+
+// do a check
+log(weekDayName, monthName);
 
 // fetching
 fetch(urlWithParams, {
@@ -77,4 +105,3 @@ app.listen(port, function () {
 });
 
 // run nodemon: npm run watch.
- 
