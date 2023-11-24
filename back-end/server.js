@@ -85,6 +85,10 @@ const monthName = months[formattedDate.getMonth()];
 // do a check
 log(weekDayName, monthName);
 
+// full Date
+const fullDate = `${weekDayName}, ${monthName} ${day}, ${year}`;
+log(fullDate);
+
 // fetching
 fetch(urlWithParams, {
   method: "GET",
