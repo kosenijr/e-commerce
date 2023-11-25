@@ -1,13 +1,15 @@
 // requirements
 
 // variables
-const log = console.log;
-const inputDate = 20231124;
+let [log, fullDate] = [console.log];
+
+// create a pure function
+const getFullDate = (rawDate) => {
 
 // extract year, month, and day from input
-const year = Math.floor(inputDate / 10000);
-const month = Math.floor((inputDate % 10000) / 100);
-const day = inputDate % 100;
+const year = Math.floor(rawDate / 10000);
+const month = Math.floor((rawDate % 10000) / 100);
+const day = rawDate % 100;
 
 // formatted the date
 const formattedDate = new Date(year, month - 1, day);
@@ -38,18 +40,14 @@ const months = [
   "December",
 ];
 
-// log(year, month, day);
-
 // get weekday and month names
-const weekDayName = weekDays[formattedDate.getDay()];
-const monthName = months[formattedDate.getMonth()];
-
-// do a check
-// log(weekDayName, monthName);
-
-// full Date
-const fullDate = `${weekDayName}, ${monthName} ${day}, ${year}`;
-// log(fullDate);
-
-// exporting fullDate variable
-module.exports = fullDate;
+  const weekDayName = weekDays[formattedDate.getDay()];
+  const monthName = months[formattedDate.getMonth()];
+  
+  // do a check
+  return fullDate = `${weekDayName}, ${monthName} ${day}, ${year}`;
+} 
+  
+  // exporting getFullDate function
+  module.exports = getFullDate;
+  

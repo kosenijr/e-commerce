@@ -44,12 +44,14 @@ fetch(urlWithParams, {
   .then((res) => res.json())
   // .then((data) => log(data, data.days[0].today_id, data.days[0].items[0], data.days[1].today_id, data.days[1].items[0]))
   .then((data) => {
+
     // store raw date format to be used
     const rawDate1 = data.days[0].today_id;
     const rawDate2 = data.days[1].today_id;
     // log(getFullDate(rawDate1), getFullDate(rawDate2)); // generates dates for today and tomorrow.
     const [dateToday, dateTomorrow] = [getFullDate(rawDate1), getFullDate(rawDate2)];
     log(dateToday, dateTomorrow);
+    
   })
   .catch((error) => console.error(`Error: ${error}`));
 

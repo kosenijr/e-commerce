@@ -50,6 +50,7 @@ fetch(urlWithParams, {
     // log(getFullDate(rawDate1), getFullDate(rawDate2)); // generates dates for today and tomorrow.
     const [dateToday, dateTomorrow] = [getFullDate(rawDate1), getFullDate(rawDate2)];
     log(dateToday, dateTomorrow);
+    
   })
   .catch((error) => console.error(`Error: ${error}`));
 
