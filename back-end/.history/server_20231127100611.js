@@ -54,6 +54,7 @@ app.get("/", (req, res) => {
         getFullDate(rawDate1),
         getFullDate(rawDate2),
       ];
+
       res.json([dateToday, dateTomorrow]);
     })
     .catch((error) => {
