@@ -1,0 +1,25 @@
+import React, {useEffect, useState} from 'react'
+// import {urlWithParams}
+//  from '../back-end/server.js';
+// get useEffect for fetch api
+
+const log = console.log;
+
+// log(urlWithParams);
+
+
+const Client = () => {
+    const [details, setDetails] = useState({})
+
+    useEffect(() => {
+        fetch(urlWithParams)
+        .then((res) => log(res))
+        .catch((err) => console.error(`Error: ${error}`));
+    }, []);
+   
+    return (
+        <p>Hey</p>
+    )
+}
+
+export default Client
