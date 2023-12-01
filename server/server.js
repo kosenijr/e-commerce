@@ -1,7 +1,8 @@
 // imports
 const getFullDate = require("./addDate");
 // requirements
-require("dotenv").config({path:`../config/env`});
+const path = require("path");
+require("dotenv").config({path: `../config`});
 const express = require("express");
 const cors = require("cors");
 // const { url } = require("inspector");
@@ -17,7 +18,7 @@ let [date1, date2] = [new Date(), new Date()];
 date2.setDate(date2.getDate() + 1);
 [date1, date2] = [date1.toDateString(), date2.toDateString()];
 
-log(process.envREACT_APP_BASIC_URL);
+log(process.env);
 
 // use cors
 app.use(cors());
@@ -75,10 +76,5 @@ app.listen(port, function () {
 });
 
 // run nodemon: npm run watch.
-<<<<<<< HEAD
-// package.json:     
-// "watch": "nodemon ./server.js",
-=======
 // package.json:
-// "watch": "nodemon ./server.js",
->>>>>>> 00dc040f479c68985e1b14d04d1321fa086a8020
+// "watch": "nodemon ./server.js"
