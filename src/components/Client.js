@@ -1,25 +1,20 @@
-import React, {useEffect, useState} from 'react'
-
+import React, { useEffect, useState } from "react";
 
 // get useEffect for fetch api
-
-const [log, urlWithParams] = [console.log, "/"]
 
 log(process.env.URL_311);
 
 const Client = () => {
-    const [details, setDetails] = useState({})
+  const [details, setDetails] = useState({});
 
-    // useEffect(() => {
-    //     fetch(urlWithParams)
-    //     .then(res => res.json())
-    //     .then(data => log(data))
-    //     .catch((err) => console.error(`Error: ${err}`));
-    // }, []);
-   
-    return (
-        <p>Hey</p>
-    )
-}
+  useEffect(() => {
+    const fetchData = fetch("https://ttzswd-5000.csb.app")
+      .then((res) => res.json())
+      .then((data) => log(data))
+      .catch((err) => console.error(`Error: ${err}`));
+  }, []);
 
-export default Client
+  return <p>Hey</p>;
+};
+
+export default Client;
