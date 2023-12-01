@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-const log = console.log;
-
 // get useEffect for fetch api
+
 log(process.env.URL_311);
 
 const Client = () => {

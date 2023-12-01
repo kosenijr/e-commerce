@@ -4,7 +4,7 @@ const getFullDate = require("./addDate");
 require("dotenv").config({path:`../config/env`});
 const express = require("express");
 const cors = require("cors");
-const { url } = require("inspector");
+// const { url } = require("inspector");
 
 
 
@@ -50,7 +50,10 @@ app.get("/", (req, res) => {
     .then((res) => res.json())
     .then((data) => {
       // store raw date format to be used
-      const [rawDate1, rawDate2] = [data.days[0].today_id, data.days[1].today_id];
+      const [rawDate1, rawDate2] = [
+        data.days[0].today_id,
+        data.days[1].today_id,
+      ];
 
       const [dateToday, detailsToday, dateTomorrow, detailsTomorrow] = [
         getFullDate(rawDate1),
@@ -72,5 +75,10 @@ app.listen(port, function () {
 });
 
 // run nodemon: npm run watch.
+<<<<<<< HEAD
 // package.json:     
 // "watch": "nodemon ./server.js",
+=======
+// package.json:
+// "watch": "nodemon ./server.js",
+>>>>>>> 00dc040f479c68985e1b14d04d1321fa086a8020
