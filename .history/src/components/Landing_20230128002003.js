@@ -1,25 +1,3 @@
-import React, { useState } from 'react'
-import styles from ''
-import Layout from './Layout'
-import Display from './Display'
-import Form from './Form'
-
-const log = console.log;
-
-const Landing = () => {
-    const [subscribe, setSubscribe] = useState(false);
-
-    const handleSubscribe = () => {
-        console.log('this button works!');
-        // setSubscribe(!subscribe);
-    }
-
-    return (
-        <Layout >
-            <Display className={styles['no-display']} />
-            <Form />
-        </Layout >
-    )
-}
-
-export default Landing
+version https://git-lfs.github.com/spec/v1
+oid sha256:0babdd13300989ca766874e9cedc2f72b2f4b3a36eca80164369f6be2e439803
+size 563

@@ -1,24 +1,3 @@
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-const Navbar = () => {
-    return (
-        <header className="App-header">
-            <div className='sub-header-1 flexing'>
-                <span>logo</span>
-                <span>user greeting</span>
-                <span>search icon</span>
-                <span>cart icon</span>
-            </div>
-            <div className='sub-header-2 flexing'>
-                <span>Our Products</span>
-                <span>Checkout</span>
-            </div>
-
-        </header>
-    )
-}
-
-
-
-export default Navbar
+version https://git-lfs.github.com/spec/v1
+oid sha256:25644fd406092bdf652115e511957b5c8b9f03bc1a0aec7c46c2bf9e43328872
+size 634

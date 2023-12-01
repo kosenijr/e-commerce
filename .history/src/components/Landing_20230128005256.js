@@ -1,26 +1,3 @@
-import React, { useState } from 'react'
-import styles from '../styles/Landing.module.css'
-import Layout from './Layout'
-import Display from './Display'
-import Form from './Form'
-
-const log = console.log;
-
-const Landing = () => {
-    const [subscribe, setSubscribe] = useState(false);
-    log(subscribe);
-    const handleSubscribe = () => {
-        // console.log('this button works!');
-        setSubscribe(!subscribe);
-    }
-
-    return (
-        <Layout >
-            
-            <Display onSubscribe={subscribe}  onHandleSubscribe={handleSubscribe} />
-            <Form />
-        </Layout >
-    )
-}
-
-export default Landing
+version https://git-lfs.github.com/spec/v1
+oid sha256:edae8fcff0f92e82e20d92d286eae90e489a37605869d0a52a579094aefd494b
+size 652

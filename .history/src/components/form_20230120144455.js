@@ -1,9 +1,3 @@
-import React from 'react'
-
-const Form = () => {
-    return (
-        <div className="asp-form"><span>City Photo</span></div>
-    )
-}
-
-export default Form
+version https://git-lfs.github.com/spec/v1
+oid sha256:d21c58008b1a7921869c649e9e2de81b57a38c433446eaa8bd27a92cd03137e5
+size 161

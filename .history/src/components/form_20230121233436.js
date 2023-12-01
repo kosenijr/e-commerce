@@ -1,21 +1,3 @@
-import React from 'react'
-import styles from '../styles/Form.module.css'
-
-const Form = () => {
-    return (
-        <div className={styles['form-container']}>
-            <div className="form-statment">
-                <h3 className={styles['form-header']}>
-                    Not sure if you have to move your vehicle today?
-                </h3>
-                
-            </div>
-
-
-
-
-        </div>
-    )
-}
-
-export default Form
+version https://git-lfs.github.com/spec/v1
+oid sha256:f49500ce64a35ccaa50269afc52faa4bad2963729b3d4dbf348c1ddae194733d
+size 452

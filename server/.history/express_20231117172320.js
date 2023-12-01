@@ -1,22 +1,3 @@
-// requirements
-const axios = require("axios");
-const express = require("express");
-// Common JS Module Compatibility
-// const fetch = require("node-fetch");
-// general variables
-const [app, port] = [express(), 5000];
-
-// fetch?
-fetch("https://api.nyc.gov/public")
-  .then((res) => res.json())
-  .then((data) => console.log(data));
-
-// what are we getting
-app.get(`/`, async function (req, res) {
-  await res.send(data);
-});
-
-// are we listening?
-app.listen(port, function () {
-  console.log(`Server is working now. It is listening on Port: ${port}.`);
-});
+version https://git-lfs.github.com/spec/v1
+oid sha256:d2e63225ac845e09b74e0825e36c3afc85ea5f6a8c7c1b395ce75b9daa9e94d8
+size 579

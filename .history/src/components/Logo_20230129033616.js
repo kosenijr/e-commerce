@@ -1,15 +1,3 @@
-import styles from '../styles/Logo.module.css'
-// import TFLogo from '../tf_logo/TicketFree.jpg'
-
-
-const Logo = () => {
-    return (
-        <div className="logo-container">
-            
-        </div>
-    )
-    
-    <div id={styles['asp-logo']}> </div>
-
-}
-    export default Logo
+version https://git-lfs.github.com/spec/v1
+oid sha256:54e1dd3ff34b457f044b145e915f5e3714c99cf8e0ccfdfe7903d94e2b51fb57
+size 294

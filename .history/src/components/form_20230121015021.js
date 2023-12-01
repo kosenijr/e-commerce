@@ -1,15 +1,3 @@
-import React from 'react'
-import styles from '../styles/Form.module.css'
-
-const Form = () => {
-    return (
-        <div className={styles['form-container']}>
-            <h3 className={styles['form-header']}>
-                Never Miss Alternate-Side Parking Again!
-            </h3>
-
-        </div>
-    )
-}
-
-export default Form
+version https://git-lfs.github.com/spec/v1
+oid sha256:fe9fd4128b8ed24bff092267f06af6e9b77ad98ddaf5751d4c10f9df23a264db
+size 343

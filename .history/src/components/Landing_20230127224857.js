@@ -1,26 +1,3 @@
-import React, { useState } from 'react'
-import Layout from './Layout'
-import Display from './Display'
-import Form from './Form'
-
-
-const Landing = () => {
-
-    const [subscribe, setSubscribe] = useState(false);
-
-    const [subscribe, setSubscribe] = useState(false)
-
-
-    if (transition === true) {
-
-    }
-
-    return (
-        <Layout >
-            <Display />
-            <Form />
-        </Layout >
-    )
-}
-
-export default Landing
+version https://git-lfs.github.com/spec/v1
+oid sha256:356b5fbb4c6fb356750085b03f2279e83b84a1ee2b3c1d2f8c619d8053170afc
+size 457

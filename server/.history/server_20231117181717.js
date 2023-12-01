@@ -1,28 +1,3 @@
-// requirements
-const express = require("express");
-const fetch = require("node-fetch");
-// general variables
-const [app, log, port] = [express(), console.log, 5000];
-
-// fetch and handle the data
-// variable
-let fetchedData;
-
-// fetching
-fetch("https://api.nyc.gov/public")
-  .then((res) => res.json())
-  .then((data) => {
-    fetchedData = data;
-    log("Data fetched successfully.");
-  })
-  .catch((error) => console.error(`Error fetching data:, ${error}`));
-
-// what are we getting
-app.get(`/`, function (req, res) {
-  res.send(data);
-});
-
-// are we listening?
-app.listen(port, function () {
-  console.log(`Server is working now. It is listening on Port: ${port}.`);
-});
+version https://git-lfs.github.com/spec/v1
+oid sha256:a9d9a3a5d633e21c163db852b51270db303fe598206adf5a74261f55e29397b0
+size 703

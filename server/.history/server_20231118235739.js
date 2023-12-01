@@ -1,26 +1,3 @@
-// requirements
-const express = require("express");
-const cors = require("cors");
-// general variables
-const [app, log, port] = [express(), console.log, 5000];
-
-// use cors
-app.use(cors());
-
-// fetch and handle the data
-// variable
-
-// fetching
-async function logMovies() {
-  const response = await fetch("http://example.com/movies.json");
-  const movies = await response.json();
-  console.log(movies);
-}
-
-// are we listening?
-app.listen(port, function () {
-  console.log(`Server is listening on Port: ${port}.`);
-});
-
-
-// run nodemon: npm run watch.
+version https://git-lfs.github.com/spec/v1
+oid sha256:4d78759021f46ac10de7875345a8c04755f693984abe7b76269a46fb8af907a0
+size 575

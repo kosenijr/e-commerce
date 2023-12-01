@@ -1,26 +1,3 @@
-// requirements
-const express = require("express");
-const cors = require("cors");
-// general variables
-const [app, log, port] = [express(), console.log, 5000];
-
-// use cors
-app.use(cors());
-
-// fetch and handle the data
-// variable
-
-// fetching
-async function infoSet() {
-  const response = await fetch("https://pokeapi.co/api/v2/pokemon");
-  const movies = await response.json();
-  console.log(movies);
-}
-
-// are we listening?
-app.listen(port, function () {
-  console.log(`Server is listening on Port: ${port}.`);
-});
-
-
-// run nodemon: npm run watch.
+version https://git-lfs.github.com/spec/v1
+oid sha256:27de471e5690810bd30e427377567f7c8fef0a949edf30c24503917d752b69b3
+size 576

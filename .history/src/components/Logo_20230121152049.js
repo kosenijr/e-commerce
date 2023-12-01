@@ -1,8 +1,3 @@
-import styles from '../styles/Logo.module.css'
-
-
-const Logo = () => {
-    return <span id={styles['asp-logo']} Ticket Free></span>
-}
-
-export default Logo
+version https://git-lfs.github.com/spec/v1
+oid sha256:680c4400351c278e49af6dd13460c1500cd657d14c0312bc3ac67168d3ebde52
+size 160
