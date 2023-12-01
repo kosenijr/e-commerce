@@ -18,7 +18,7 @@ let [date1, date2] = [new Date(), new Date()];
 date2.setDate(date2.getDate() + 1);
 [date1, date2] = [date1.toDateString(), date2.toDateString()];
 
-log(process.env);
+log(process.env.SUBSCRIPTION_KEY);
 
 // use cors
 app.use(cors());

@@ -7,8 +7,6 @@ const express = require("express");
 const cors = require("cors");
 const { url } = require("inspector");
 
-
-
 // procedural variables
 const [app, log, port] = [express(), console.log, 5000];
 const basicURL = process.env.REACT_APP_BASIC_URL;
@@ -18,7 +16,7 @@ let [date1, date2] = [new Date(), new Date()];
 date2.setDate(date2.getDate() + 1);
 [date1, date2] = [date1.toDateString(), date2.toDateString()];
 
-log(process.env);
+log(basicURL);
 
 // use cors
 app.use(cors());
