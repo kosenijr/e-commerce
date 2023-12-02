@@ -1,11 +1,11 @@
 // imports
 const getFullDate = require("./addDate");
 // requirements
+require("dotenv").config({path: `../../e-commerce/.env`});
 const path = require("path");
-require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const { url } = require("inspector");
+// const { url } = require("inspector");
 
 // procedural variables
 const [app, log, port] = [express(), console.log, 5000];
@@ -16,7 +16,7 @@ let [date1, date2] = [new Date(), new Date()];
 date2.setDate(date2.getDate() + 1);
 [date1, date2] = [date1.toDateString(), date2.toDateString()];
 
-log(process.env);
+log(process.env.REACT_APP_BASIC_URL);
 
 // use cors
 app.use(cors());
