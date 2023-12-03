@@ -10,15 +10,16 @@ const cors = require("cors");
 // procedural variables
 const [app, log, port] = [express(), console.log, 5000];
 const basicURL = process.env.REACT_APP_BASIC_URL;
-const subsc = process.env.SUBSCRIPTION_KEY;
+const subsc = process.env.REACT_APP_SUBSCRIPTION_KEY;
+
 // date variables
 let [date1, date2] = [new Date(), new Date()];
 date2.setDate(date2.getDate() + 1);
 [date1, date2] = [date1.toDateString(), date2.toDateString()];
 
 // log(process.env);
-log(process.env.REACT_APP_BASIC_URL);
-
+// log(process.env.REACT_APP_BASIC_URL);
+// log(getFullDate(20231124));
 
 // use cors
 app.use(cors());
@@ -50,6 +51,9 @@ app.get("/", (req, res) => {
   })
     .then((res) => res.json())
     .then((data) => {
+
+      // log(data);
+
       // store raw date format to be used
       const [rawDate1, rawDate2] = [
         data.days[0].today_id,
@@ -62,18 +66,27 @@ app.get("/", (req, res) => {
         getFullDate(rawDate2),
         data.days[1].items[0],
       ];
-      log([dateToday, detailsToday, dateTomorrow, detailsTomorrow]);
+
+      // log(dateToday);
+
+      // log([dateToday, detailsToday, dateTomorrow, detailsTomorrow]);
       res.json([dateToday, detailsToday, dateTomorrow, detailsTomorrow]);
+      // res.json(data);
     })
     .catch((error) => {
       console.error(`Error: ${error}`);
       res.status(500).json({ error: "Internal Server Error" });
     });
 });
+
+// log(urlWithParams);
+
 // are we listening?
 app.listen(port, function () {
   console.log(`Server is listening on Port: ${port}.`);
 });
+
+module.exports={urlWithParams}
 
 // run nodemon: npm run watch.
 // package.json:
