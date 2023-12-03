@@ -1,0 +1,17 @@
+.display-container {
+    width: 100vw;
+    height: 100vh;
+    padding: 2em 0 0 5em;
+}
+
+.display-section {
+    line-height: 4
+}
+
+.display-container div p {
+    font-family: "Raleway";
+    color: white;
+    /* background-color: #000000; */
+    font-size: 2em ;
+    
+}

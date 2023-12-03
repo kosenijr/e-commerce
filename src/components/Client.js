@@ -1,24 +1,70 @@
 import React, { useEffect, useState } from "react";
+import styles from "../styles/Client.module.css";
 
 const log = console.log;
 
-// get useEffect for fetch api
-// log(process.env.REACT_APP_BASIC_URL, process.env.REACT_APP_SUBSCRIPTION_KEY);
+// log(process.env.REACT_APP_API_URL);
 
 const Client = () => {
-  const [details, setDetails] = useState({});
+  const [info, setInfo] = useState({
+    todayDate: "",
+    todayMessage: "",
+    todayAlert: "",
+    tomorrowDate: "",
+    tomorrowMessage: "",
+    tomorrowAlert: "",
+  });
 
-  // useEffect(() => {
+  useEffect(() => {
     // check fetch url to standard url.
-  //   const fetchData = fetch("https://ttzswd-5000.csb.app")
-  //     .then((res) => res.json())
-  //     .then((data) => log(data))
-  //     .catch((err) => console.error(`Error: ${err}`));
-  // }, []);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(process.env.REACT_APP_API_URL);
+        // log(response);
+        const result = await response.json();
+        setInfo(result);
+        // log(result);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchData();
+    // log(info);
+  }, []);
+
+  log(Object.keys(info), Object.values(info));
+  const values = Object.values(info);
+  const infoData = {
+    todayDate: values[0],
+    todayMessage: values[1].details,
+    todayAlert: values[1].status,
+    tomorrowDate: values[2],
+    tomorrowMessage: values[3].details,
+    tomorrowAlert: values[3].status,
+  };
+
+  log(infoData);
 
   return (
-  <p>Hey</p>
-  )
+    <div className={styles["display-container"]}>
+      {info && (
+        <div>
+          <section className={styles["display-section"]}>
+            <p>
+              Today: {infoData.todayDate}: {infoData.todayAlert}
+            </p>
+            <p>{infoData.todayMessage}</p>
+          </section>
+          <section className={styles["display-section"]}>
+            <p>
+              Tomorrow: {infoData.tomorrowDate}: {infoData.tomorrowAlert}
+            </p>
+            <p>{infoData.tomorrowMessage}</p>
+          </section>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default Client;
