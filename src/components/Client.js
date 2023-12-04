@@ -3,7 +3,7 @@ import styles from "../styles/Client.module.css";
 
 const log = console.log;
 
-// log(process.env.REACT_APP_API_URL);
+log(process.env.REACT_APP_API_URL);
 
 const Client = () => {
   const [info, setInfo] = useState({
@@ -20,6 +20,8 @@ const Client = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(process.env.REACT_APP_API_URL);
+        // const response = await fetch(process.env.REACT_URL_API_URL);
+
         // log(response);
         const result = await response.json();
         setInfo(result);

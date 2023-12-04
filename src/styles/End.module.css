@@ -1,0 +1,12 @@
+.end-display {
+    width: 100vw;
+    height: 100vh;
+    padding: 3em 0 0 10em;;
+}
+
+.end-display p {
+    color: white;
+    font-size: 2em;
+    font-family: "Raleway"
+
+}
