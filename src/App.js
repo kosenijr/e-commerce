@@ -7,8 +7,8 @@ function App() {
   return (
     <div className={styles['App']} id={styles['overlay']}>
       <Landing />
-      {/* <Client/> */}
-      {/* <End /> */}
+      <Client/>
+      <End />
     </div>
   );
 }
