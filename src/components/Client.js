@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Client.module.css";
 
-const Client = () => {
-  const log = console.log;
-  log("log is working")
+const log = console.log;
+log("this is working!");
 
+log(process.env, process.env.REACT_APP_API_URL)
+
+const Client = () => {
   const [info, setInfo] = useState({
     todayDate: "",
     todayMessage: "",
@@ -18,9 +20,8 @@ const Client = () => {
     // check fetch url to standard url.
     const fetchData = async () => {
       try {
-        const response = await fetch("/");
-
-        // log(response);
+        const response = await fetch(process.env.REACT_APP_API_URL);
+        log(response);
         const result = await response.json();
         setInfo(result);
         // log(result);

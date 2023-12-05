@@ -6,9 +6,9 @@ import End from './components/End'
 function App() {
   return (
     <div className={styles['App']} id={styles['overlay']}>
-      <Landing />
+      {/* <Landing /> */}
       <Client/>
-      <End />
+      {/* <End /> */}
     </div>
   );
 }
