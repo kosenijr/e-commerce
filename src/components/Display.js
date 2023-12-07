@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ddc2f1c01e0c347f6868a4f4d7aacd0de80360f4a3a25a845594e535c3bc274
-size 1061
+import React from 'react'
+import styles from '../styles/Display.module.css'
+
+const log = console.log;
+
+const Display = ({ onSubscribe, onHandleSubscribe }) => {
+    // log(onSubscribe);
+
+    return (
+        // onSubscribe passes subscribe which is false
+        <div className={`${styles['display-container']} ${styles[onSubscribe ? 'no-display' : '']}`}>
+            <div className={styles['display-statement']}>
+                <h3 className={styles['display-header']}>
+                    Not sure if you have to move your vehicle today?
+                </h3>
+            </div>
+            <span className={styles['display-header']}></span>
+            <div className={styles['display-section']}>
+                <h4 className={styles['call-to-action']}>
+                    Be the first to know about alternate-side parking.
+                </h4>
+                <button className={styles['call-to-action-button']} onClick={onHandleSubscribe} >Subscribe</button>
+            </div>
+        </div>
+    )
+}
+
+export default Display
