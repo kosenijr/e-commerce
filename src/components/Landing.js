@@ -3,14 +3,14 @@ import styles from '../styles/Landing.module.css'
 import Layout from './Layout'
 import Display from './Display'
 import Form from './Form'
-import End from './End'
+import Thanks from './Thanks'
 
 const log = console.log;
 
 const Landing = () => {
     const [subscribe, setSubscribe] = useState(false);
     const [formSection, setFormSection] = useState(false);
-    const [ending, setEnding] = useState(false);
+    const [thanks, setThanks] = useState(false);
 
     const handleSubscribe = () => {
         // console.log('this button works!');
@@ -18,16 +18,17 @@ const Landing = () => {
         setFormSection(!formSection);
     }
     
-    const handleEnding = () => {
-        console.log('working on ending');
-        
+    const handleThanks = () => {
+        console.log('working on thanks');
+        setThanks(!thanks);
     }
 
     return (
         <Layout >
             {/* onSubscribe has an inverse relationship with subscribe: when onSubscribe is true, subscribe is false, when onSubscribe is false, subscribe is true. */}
             <Display onSubscribe={subscribe} onHandleSubscribe={handleSubscribe} />
-            <Form onFormSection={formSection} onHandleSubscribe={handleSubscribe} />
+            <Form onFormSection={formSection} onHandleSubscribe={handleSubscribe} onHandlethanks={handlethanks}/>
+            <Thanks onthanks={thanks} onHandlethanks={handlethanks} />
         </Layout >
     )
 }

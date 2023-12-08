@@ -33,10 +33,5 @@
 }
 
 .no-display {
-  /* transition-timing-function: ease-out; */
   display: none;
-  /* transition-timing-function: ease-out;
-  transition: 5s;
-  transform: translateX(-500%); */
-  /* transition-duration: 2000ms; */
 }

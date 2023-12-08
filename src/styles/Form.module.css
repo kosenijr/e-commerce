@@ -1,8 +1,15 @@
-.form-container {
-  display: flex;
+.form-container{
   justify-content: right;
   font-family: "Raleway";
   line-height: 2
+}
+
+.form-display-on {
+  display:flex;
+}
+
+.form-display-off {
+  display:none;
 }
 
 .form-statement {
