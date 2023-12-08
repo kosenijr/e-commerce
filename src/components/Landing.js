@@ -27,8 +27,8 @@ const Landing = () => {
         <Layout >
             {/* onSubscribe has an inverse relationship with subscribe: when onSubscribe is true, subscribe is false, when onSubscribe is false, subscribe is true. */}
             <Display onSubscribe={subscribe} onHandleSubscribe={handleSubscribe} />
-            <Form onFormSection={formSection} onHandleSubscribe={handleSubscribe} onHandlethanks={handlethanks}/>
-            <Thanks onthanks={thanks} onHandlethanks={handlethanks} />
+            <Form onFormSection={formSection} onHandleSubscribe={handleSubscribe} onHandleThanks={handleThanks}/>
+            <Thanks onThanks={thanks} onHandleThanks={handleThanks} />
         </Layout >
     )
 }

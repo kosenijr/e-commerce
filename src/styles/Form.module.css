@@ -108,4 +108,5 @@ button[type="submit"] {
   border-radius: 25px;
   color: white;
   background-color: green;
+  cursor: pointer;
 }
