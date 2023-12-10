@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styles from "../styles/Landing.module.css";
 import Layout from "./Layout";
 import Display from "./Display";
 import Form from "./Form";
@@ -9,8 +8,8 @@ const log = console.log;
 
 const Landing = () => {
   const [subscribe, setSubscribe] = useState(false);
-//   const [formSection, setFormSection] = useState(false);
-const [formDisplay, setFormDisplay] = useState(false);
+  //   const [formSection, setFormSection] = useState(false);
+  const [formDisplay, setFormDisplay] = useState(false);
   const [thanks, setThanks] = useState(false);
 
   const handleSubscribe = () => {
@@ -18,7 +17,6 @@ const [formDisplay, setFormDisplay] = useState(false);
     setSubscribe(!subscribe);
     // setFormSection(!formSection);
     setFormDisplay(!formDisplay);
-
   };
 
   const handleThanks = () => {
@@ -31,7 +29,7 @@ const [formDisplay, setFormDisplay] = useState(false);
       {/* onSubscribe has an inverse relationship with subscribe: when onSubscribe is true, subscribe is false, when onSubscribe is false, subscribe is true. */}
       <Display onSubscribe={subscribe} onHandleSubscribe={handleSubscribe} />
       {/* <Form onFormSection={formSection} onHandleSubscribe={handleSubscribe} onHandleThanks={handleThanks}/> */}
-      <Form className={styles["form"]} onHandleSubscribe={handleSubscribe} onFormDisplay={formDisplay}/>
+      <Form onFormDisplay={formDisplay} onHandleSubscribe={handleSubscribe} />
       <Thanks onThanks={thanks} onHandleThanks={handleThanks} />
     </Layout>
   );

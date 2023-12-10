@@ -2,10 +2,14 @@ import React from "react";
 import FormInput from "./FormInput";
 import styles from "../styles/Form.module.css";
 
-const Form = () => {
+const Form = ({ onFormDisplay }) => {
   return (
-    <div>
-      <form className={styles["form"]}>
+    <div
+      className={`${styles["form-div"]} ${
+        styles[onFormDisplay ? "form-on" : "form-off"]
+      }`}
+    >
+      <form>
         <FormInput placeholder="First Name" />
         <FormInput placeholder="Last Name" />
         <FormInput placeholder="Email" />
@@ -14,7 +18,8 @@ const Form = () => {
         <FormInput placeholder="Address Line 2" />
         <FormInput placeholder="City" />
         <FormInput placeholder="State" />
-        <FormInput placeholder="ZIP Code" /> <button> Submit </button>
+        <FormInput placeholder="ZIP Code" />
+        <button> Submit </button>
       </form>
     </div>
   );
