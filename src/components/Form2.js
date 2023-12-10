@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styles from "../styles/Form.module.css";
+import styles from "../styles/Form2.module.css";
 
-const Form = ({ onFormSection, onHandleThanks }) => {
+const Form2 = ({ onFormSection, onHandleThanks }) => {
   const [formDisplay, setFormDisplay] = useState(true);
   // set up useStake hooks for different types of information
   // name, email, text number, notification, addressOne, addressTwo (optional), city, state, zip
@@ -170,4 +170,4 @@ const Form = ({ onFormSection, onHandleThanks }) => {
   );
 };
 
-export default Form;
+export default Form2;

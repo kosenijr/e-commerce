@@ -1,8 +1,6 @@
 import React from 'react'
 import styles from '../styles/Display.module.css'
 
-const log = console.log;
-
 const Display = ({ onSubscribe, onHandleSubscribe }) => {
     // log(onSubscribe);
 
