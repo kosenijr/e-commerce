@@ -9,7 +9,7 @@ const Form = ({ onFormDisplay }) => {
         styles[onFormDisplay ? "form-on" : "form-off"]
       }`}
     >
-      <form>
+      <form className={styles["user-form"]}>
         <FormInput placeholder="First Name" />
         <FormInput placeholder="Last Name" />
         <FormInput placeholder="Email" />

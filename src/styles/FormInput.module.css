@@ -1,7 +1,6 @@
 .formInput {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100 vh;
-    width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5% 1%;
 }
