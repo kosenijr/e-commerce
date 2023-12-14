@@ -19,7 +19,7 @@ const Form = ({ onFormDisplay }) => {
         <FormInput placeholder="City" />
         <FormInput placeholder="State" />
         <FormInput placeholder="ZIP Code" />
-        <button> Submit </button>
+        <button type="button" onClick={e => e.preventDefault()}> Submit </button>
       </form>
     </div>
   );
