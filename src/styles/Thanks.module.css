@@ -1,16 +1,17 @@
+.thanks-display-perm {
+    padding: 3em;
+
+}
+
 .thanks-display-on {
-    /* display: flex; */
-    width: 100vw;
-    height: 100vh;
-    padding: 3em 0 0 10em;;
+    display: flex;
 }
 
 .thanks-display-off {
     display: none;
 }
 
-
-.thanks-display p {
+.thanks-display-perm p {
     color: white;
     font-size: 2em;
     font-family: "Raleway"

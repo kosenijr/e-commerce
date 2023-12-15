@@ -2,10 +2,10 @@ import React from "react";
 import FormInput from "./FormInput";
 import styles from "../styles/Form.module.css";
 
-const Form = ({ onFormDisplay, onHandleThanks }) => {
+const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
   
   return (
-    <div className={`${styles["form-container"]} ${styles[onFormDisplay ? "form-on" : "form-off"]}`}>
+    <div className={`${styles["form-container"]} ${styles[onFormDisplay ? "form-on" : "form-off"]} ${styles[onSubmit ? "form-off" : "form-on"]}`}>
       <form className={styles["user-form"]}>
         {/* form fields */}
         <FormInput placeholder="First Name" />
@@ -18,11 +18,9 @@ const Form = ({ onFormDisplay, onHandleThanks }) => {
         <FormInput placeholder="State" />
         <FormInput placeholder="ZIP Code" />
         {/* button */}
-        {/* <div className={styles["submit-button"]}> */}
-          <button className={styles["submit-button"]} type="submit" onClick={onHandleThanks}>
+          <button className={styles["submit-button"]} type="submit" onClick={onHandleSubmit} >
             Submit
           </button>
-        {/* </div> */}
       </form>
     </div>
   );

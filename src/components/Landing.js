@@ -9,7 +9,7 @@ const log = console.log;
 const Landing = () => {
   const [subscribe, setSubscribe] = useState(false);
   const [formDisplay, setFormDisplay] = useState(false);
-  const [thanks, setThanks] = useState(false);
+  const [submit, setSubmit] = useState(false);
 
   const handleSubscribe = () => {
     // console.log('this button works!');
@@ -17,11 +17,10 @@ const Landing = () => {
     setFormDisplay(!formDisplay);
   };
 
-  const handleThanks = (event) => {
-    event.preventDefault();
-    console.log("working on thanks");
+  const handleSubmit = (event) => {
+    event.preventDefault(); // must input
     setFormDisplay(formDisplay);
-    setThanks(!thanks);
+    setSubmit(!submit);
   };
 
   return (
@@ -30,10 +29,11 @@ const Landing = () => {
       <Display onSubscribe={subscribe} onHandleSubscribe={handleSubscribe} />
       <Form
         onFormDisplay={formDisplay}
-        onHandleSubscribe={handleSubscribe}
-        onHandleThanks={handleThanks}
+        onSubmit={submit}
+        onHandleSubmit={handleSubmit}
+
       />
-      <Thanks onThanks={thanks} onHandleThanks={handleThanks} />
+      <Thanks onSubmit={submit}/>
     </Layout>
   );
 };
