@@ -8,19 +8,19 @@ const log = console.log;
 
 const Landing = () => {
   const [subscribe, setSubscribe] = useState(false);
-  //   const [formSection, setFormSection] = useState(false);
   const [formDisplay, setFormDisplay] = useState(false);
   const [thanks, setThanks] = useState(false);
 
   const handleSubscribe = () => {
     // console.log('this button works!');
     setSubscribe(!subscribe);
-    // setFormSection(!formSection);
     setFormDisplay(!formDisplay);
   };
 
-  const handleThanks = () => {
+  const handleThanks = (event) => {
+    event.preventDefault();
     console.log("working on thanks");
+    setFormDisplay(formDisplay);
     setThanks(!thanks);
   };
 
@@ -28,8 +28,11 @@ const Landing = () => {
     <Layout>
       {/* onSubscribe has an inverse relationship with subscribe: when onSubscribe is true, subscribe is false, when onSubscribe is false, subscribe is true. */}
       <Display onSubscribe={subscribe} onHandleSubscribe={handleSubscribe} />
-      {/* <Form onFormSection={formSection} onHandleSubscribe={handleSubscribe} onHandleThanks={handleThanks}/> */}
-      <Form onFormDisplay={formDisplay} />
+      <Form
+        onFormDisplay={formDisplay}
+        onHandleSubscribe={handleSubscribe}
+        onHandleThanks={handleThanks}
+      />
       <Thanks onThanks={thanks} onHandleThanks={handleThanks} />
     </Layout>
   );
