@@ -1,10 +1,11 @@
 .thanks-display-perm {
-    padding: 3em;
+    width: 100vw;
+    /* height: 100vh; */
 
 }
 
 .thanks-display-on {
-    display: flex;
+    display: in-line flex;
 }
 
 .thanks-display-off {
@@ -13,7 +14,11 @@
 
 .thanks-display-perm p {
     color: white;
-    font-size: 2em;
-    font-family: "Raleway"
+    font-size: 1.5em;
+    font-family: "Raleway";
+    font-weight: 700;
+    padding: 2vh 15vw;
+
+
 
 }

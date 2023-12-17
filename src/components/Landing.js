@@ -17,11 +17,11 @@ const Landing = () => {
     setFormDisplay(!formDisplay);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault(); // must input
-    setFormDisplay(formDisplay);
+  const handleSubmit = (e) => {
+    // implement preventDefault() to implement submit button properly
+    e.preventDefault();
     setSubmit(!submit);
-  };
+    };
 
   return (
     <Layout>
@@ -31,9 +31,8 @@ const Landing = () => {
         onFormDisplay={formDisplay}
         onSubmit={submit}
         onHandleSubmit={handleSubmit}
-
       />
-      <Thanks onSubmit={submit}/>
+      <Thanks onSubmit={submit} />
     </Layout>
   );
 };

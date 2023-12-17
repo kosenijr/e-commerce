@@ -5,7 +5,9 @@ import styles from "../styles/Thanks.module.css";
 const Thanks = ({ onSubmit }) => {
   return (
     <div
-      className={`${styles["thanks-display-perm"]} ${styles[onSubmit ? "thanks-display-on" : "thanks-display-off"]}`}
+      className={`${styles["thanks-display-perm"]} ${
+        styles[onSubmit ? "thanks-display-on" : "thanks-display-off"]
+      }`}
     >
       <p>Thank you for your submission!</p>
       <p>

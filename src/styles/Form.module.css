@@ -1,6 +1,10 @@
 .form-container {
   display: flex;
-  margin: 15em;
+  margin: 5em;
+}
+
+label {
+  color: white;
 }
 
 .form-on {
