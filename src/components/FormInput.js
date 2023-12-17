@@ -4,7 +4,7 @@ import styles from "../styles/FormInput.module.css";
 const FormInput = (props) => {
   return (
     <div className={styles["formInput"]}>
-      {/* <label>Username</label> */}
+      <label>{props.name}</label>
       <input placeholder={props.placeholder} />
     </div>
   );

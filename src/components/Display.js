@@ -16,7 +16,6 @@ const Display = ({ onSubscribe, onHandleSubscribe }) => {
           Not sure if you have to move your vehicle today?
         </h3>
       </div>
-      <span className={styles["display-header"]}></span>
       <div className={styles["display-section"]}>
         <h4 className={styles["call-to-action"]}>
           Be the first to know about alternate-side parking.

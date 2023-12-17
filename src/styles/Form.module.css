@@ -22,5 +22,10 @@ label {
 }
 
 .submit-button {
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
   cursor: pointer;
 }
