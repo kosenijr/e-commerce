@@ -1,20 +1,33 @@
 .formInput {
   display: flex;
+  flex-direction: column;
   align-items: left;
   justify-content: left;
 }
 
+.section-1 {
+  align-items: flex-start;
+}
+
+
 label {
-  padding-right: 2vw;
-  width: 8em;
-  
+  padding-right: 3vw;
+  align-self: flex-start;
 }
 
 input {
+  /* margin: 0 3vw; */
   width: 15vw;
   border-radius: 30px;
+  align-self: flex-start;
 }
 
 input:placeholder-shown {
   padding-left: 0.5em;
+}
+
+p {
+  color: red;
+  margin-top: 2px;
+  align-self: flex-start;
 }

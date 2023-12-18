@@ -11,15 +11,15 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
     >
       <form className={styles["user-form"]}>
         {/* form fields */}
-        <FormInput name="First Name" placeholder="John" />
-        <FormInput name="Last Name" placeholder="Doe" />
-        <FormInput name="Email" placeholder="john.doe@example.com" />
-        <FormInput name="Phone Number" placeholder="(555) 123-4567" />
-        <FormInput name="Address Line 1" placeholder="123 Main Street" />
-        <FormInput name="Address Line 2" placeholder="Apt #305" />
-        <FormInput name="City" placeholder="Anytown" />
-        <FormInput name="State" placeholder="CA" />
-        <FormInput name="Zip Code" placeholder="12345" />
+        <FormInput name="First Name" placeholder="John" value="first name" />
+        <FormInput name="Last Name" placeholder="Doe" value="last name" />
+        <FormInput name="Email" placeholder="john.doe@example.com" value="email" />
+        <FormInput name="Phone Number" placeholder="(555) 123-4567" value="phone number" />
+        <FormInput name="Address Line 1" placeholder="123 Main Street" value="address" />
+        <FormInput name="Address Line 2" placeholder="Apt #305" value="address" />
+        <FormInput name="City" placeholder="Anytown" value="city" />
+        <FormInput name="State" placeholder="CA" value="city" />
+        <FormInput name="Zip Code" placeholder="12345" value="zip code" />
         {/* button */}
         <button
           className={styles["submit-button"]}
