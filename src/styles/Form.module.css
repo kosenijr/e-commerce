@@ -18,9 +18,9 @@ label {
 }
 
 .user-form > * {
-  margin: 0%;
+  margin: 4% 0%;
 }
-
+ 
 .submit-button {
   color: white;
   background-color: green;

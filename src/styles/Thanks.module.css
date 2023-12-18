@@ -1,24 +1,21 @@
 .thanks-display-perm {
-    width: 100vw;
-    /* height: 100vh; */
-
+  width: fit-content;
+  text-align: center;
+  margin: 5% auto;
+  font-family: "Raleway";
 }
 
 .thanks-display-on {
-    display: in-line flex;
+  display: in-line flex;
 }
 
 .thanks-display-off {
-    display: none;
+  display: none;
 }
 
 .thanks-display-perm p {
-    color: white;
-    font-size: 1.5em;
-    font-family: "Raleway";
-    font-weight: 700;
-    padding: 2vh 15vw;
-
-
-
+  color: white;
+  font-size: 1.5em;
+  font-weight: 700;
+  padding: 2vh 15vw;
 }
