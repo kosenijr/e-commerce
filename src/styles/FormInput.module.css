@@ -9,10 +9,11 @@
 
 .section-2 {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 label {
+  /* font-size: 1.2em; */
   width: 8em;
   display: inline-flex;
 }
@@ -25,6 +26,10 @@ input {
 
 input:placeholder-shown {
   padding-left: 0.5em;
+}
+
+input[type="text"] {
+  padding: 0 0.5em;
 }
 
 p {
