@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import styles from "../styles/FormInput.module.css";
 
+const log = console.log;
+
 const FormInput = (props) => {
   const [error, setError] = useState(false);
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
-    setError(!props.validate(inputValue));
+    log(inputValue, e.target, e.target.value);
   };
 
   return (
