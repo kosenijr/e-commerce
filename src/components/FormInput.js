@@ -7,8 +7,37 @@ const FormInput = (props) => {
   const [error, setError] = useState(false);
 
   const handleInputChange = (e) => {
-    const inputValue = e.target.value;
-    log(inputValue, e.target, e.target.value);
+    let [inputValue, isValid] = [e.target.value, false];
+
+    // set up switch statement
+    switch (props.name) {
+      case "First Name":
+      case "Last Name":
+      case "Address Line 1":
+      case "Address Line 2":
+      case "City":
+        isValid = /^[A-Za-z\s]+$/.test(inputValue);
+        break;
+      case "Email":
+        isValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+          inputValue,
+        );
+        break;
+      case "Phone Number":
+        isValid = /^\(\d{3}\) \d{3}-\d{4}$/.test(inputValue);
+        break;
+      case "State":
+        isValid = /^[A-Za-z]{2}$/.test(inputValue);
+        break;
+      case "Zip Code":
+        isValid = /^\d{5}$/.test(inputValue);
+        break;
+      default:
+        isValid = true; // No validation by default
+        break;
+    }
+    setError(!isValid);
+    log(error);
   };
 
   return (
