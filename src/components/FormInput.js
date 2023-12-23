@@ -6,6 +6,12 @@ const log = console.log;
 const FormInput = (props) => {
   const [error, setError] = useState(false);
 
+  const formatPhoneNumber = (input) => {
+    const numericInput = input.replace(/\D/g, "");
+    const formattedNumber = numericInput.replace(/(\d{3})(\d{3})(\d{4})/);
+    return formattedNumber;
+  };
+
   const handleInputChange = (e) => {
     let [inputValue, isValid] = [e.target.value, false];
 
@@ -20,10 +26,11 @@ const FormInput = (props) => {
         break;
       case "Email":
         isValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-          inputValue,
+          inputValue
         );
         break;
       case "Phone Number":
+        inputValue = formatPhoneNumber(inputValue); // Format phone number
         isValid = /^\(\d{3}\) \d{3}-\d{4}$/.test(inputValue);
         break;
       case "State":
@@ -37,7 +44,6 @@ const FormInput = (props) => {
         break;
     }
     setError(!isValid);
-    log(error);
   };
 
   return (
@@ -52,7 +58,7 @@ const FormInput = (props) => {
         />
       </section>
       <section className={styles["section-2"]}>
-        {error && <p>Incorrect input. Please enter a proper {props.value}.</p>}
+        {error && <p>Incorrect input. Please enter your {props.name.toLowerCase()}.</p>}
         {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}
       </section>
     </div>
