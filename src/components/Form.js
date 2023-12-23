@@ -1,6 +1,8 @@
 import React from "react";
 import FormInput from "./FormInput";
+import PhoneNumberInput from "./PhoneNumberInput";
 import styles from "../styles/Form.module.css";
+
 
 const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
   return (
@@ -14,7 +16,8 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
         <FormInput name="First Name" placeholder="John" value="firstName" />
         <FormInput name="Last Name" placeholder="Doe" value="lastName" />
         <FormInput name="Email" placeholder="john.doe@example.com" value="email" />
-        <FormInput name="Phone Number" placeholder="(555) 123-4567" value="phoneNumber" />
+        <PhoneNumberInput/>
+        {/* <FormInput name="Phone Number" placeholder="(555) 123-4567" value="phoneNumber" /> */}
         <FormInput name="Address Line 1" placeholder="123 Main Street" value="addressLine1" />
         <FormInput name="Address Line 2" placeholder="Apt #305" value="addressLine2" />
         <FormInput name="City" placeholder="Anytown" value="city" />
