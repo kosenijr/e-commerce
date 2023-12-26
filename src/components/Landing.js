@@ -9,6 +9,7 @@ const log = console.log;
 const Landing = () => {
   const [subscribe, setSubscribe] = useState(false);
   const [formDisplay, setFormDisplay] = useState(false);
+  const [error, setError] = useState(false);
   const [submit, setSubmit] = useState(false);
 
   const handleSubscribe = () => {
@@ -16,6 +17,10 @@ const Landing = () => {
     setSubscribe(!subscribe);
     setFormDisplay(!formDisplay);
   };
+
+  const handleError = () => {
+    
+  }
 
   const handleSubmit = (e) => {
     // implement preventDefault() to implement submit button properly
@@ -31,6 +36,8 @@ const Landing = () => {
         onFormDisplay={formDisplay}
         onSubmit={submit}
         onHandleSubmit={handleSubmit}
+        onError={error}
+        onHandleError={handleError}
       />
       <Thanks onSubmit={submit} />
     </Layout>

@@ -3,8 +3,8 @@ import styles from "../styles/FormInput.module.css";
 
 const log = console.log;
 
-const FormInput = (props) => {
-  const [error, setError] = useState(false);
+const FormInput = (props, onError) => {
+  // const [error, setError] = useState(false);
 
   const handleInputChange = (e) => {
     let [inputValue, isValid] = [e.target.value, false];
