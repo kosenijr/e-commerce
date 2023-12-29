@@ -1,17 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 import FormInput from "./FormInput";
 import PhoneNumberInput from "./PhoneNumberInput";
 import styles from "../styles/Form.module.css";
+import { queryAllByAltText } from "@testing-library/react";
 
 
-const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
+const Form = ({ onFormDisplay, onHandleError, onHandleSubmit, onSubmit }) => {
+  const [error, setError] = useState(false);
+
+  const handleError = () => {
+    setError(true);
+  }
+
   return (
     <div
       className={`${styles["form-container"]} ${
         styles[onFormDisplay ? "form-on" : "form-off"]
       } ${styles[onSubmit ? "form-off" : "form-on"]}`}
     >
-      <form className={styles["user-form"]}>
+      <form className={styles["user-form"]} onError={error}onHandleError={onHandleError}>
         {/* form fields */}
         <FormInput name="First Name" placeholder="John" value="firstName" />
         <FormInput name="Last Name" placeholder="Doe" value="lastName" />
@@ -28,6 +35,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           className={styles["submit-button"]}
           type="submit"
           onClick={onHandleSubmit}
+          onError={error}
         >
           Submit
         </button>

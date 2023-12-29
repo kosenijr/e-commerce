@@ -3,8 +3,7 @@ import styles from "../styles/FormInput.module.css";
 
 const log = console.log;
 
-const FormInput = (props, onError) => {
-  // const [error, setError] = useState(false);
+const FormInput = (props, onError, onHandleError) => {
 
   const handleInputChange = (e) => {
     let [inputValue, isValid] = [e.target.value, false];
@@ -39,7 +38,8 @@ const FormInput = (props, onError) => {
         isValid = true; // No validation by default
         break;
     }
-    setError(!isValid);
+    onHandleError(!isValid);
+    log(onHandleError);
   };
 
   return (
@@ -54,7 +54,7 @@ const FormInput = (props, onError) => {
         />
       </section>
       <section className={styles["section-2"]}>
-        {error && (
+        {onError && (
           <p>Incorrect input. Please enter your {props.name.toLowerCase()}.</p>
         )}
         {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}

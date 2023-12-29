@@ -9,7 +9,6 @@ const log = console.log;
 const Landing = () => {
   const [subscribe, setSubscribe] = useState(false);
   const [formDisplay, setFormDisplay] = useState(false);
-  const [error, setError] = useState(false);
   const [submit, setSubmit] = useState(false);
 
   const handleSubscribe = () => {
