@@ -6,14 +6,7 @@ import styles from "../styles/Form.module.css";
 const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
   const [errors, setErrors] = useState({
     firstName: false,
-    lastName: false,
-    email: false,
-    phoneNumber: false,
-    addressLine1: false,
-    addressLine2: false,
-    city: false,
-    state: false,
-    zipCode: false
+    
   })
 
   return (
@@ -30,7 +23,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           placeholder="John"
           value="firstName"
           setError={setError}
-          error={errors.firstName}
+          error={error}
         />
 
         <FormInput
@@ -38,7 +31,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           placeholder="Doe"
           value="lastName"
           setError={setError}
-          error={errors.lastName}
+          error={error}
         />
 
         <FormInput
@@ -46,7 +39,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           placeholder="john.doe@example.com"
           value="email"
           setError={setError}
-          error={errors.email}
+          error={error}
         />
 
         <PhoneNumberInput />
@@ -56,7 +49,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           placeholder="123 Main Street"
           value="addressLine1"
           setError={setError}
-          error={errors.addressLine1}
+          error={error}
         />
 
         <FormInput
@@ -64,7 +57,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           placeholder="Apt #305"
           value="addressLine2"
           setError={setError}
-          error={errors.addressLine2}
+          error={error}
         />
 
         <FormInput
@@ -72,7 +65,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           placeholder="Anytown"
           value="city"
           setError={setError}
-          error={errors.city}
+          error={error}
         />
 
         <FormInput
@@ -80,7 +73,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           placeholder="CA"
           value="state"
           setError={setError}
-          error={errors.state}
+          error={error}
         />
 
         <FormInput
@@ -88,7 +81,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           placeholder="12345"
           value="zipCode"
           setError={setError}
-          error={errors.zipCode}
+          error={error}
         />
 
         {/* button */}

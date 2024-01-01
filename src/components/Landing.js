@@ -4,7 +4,7 @@ import Display from "./Display";
 import Form from "./Form";
 import Thanks from "./Thanks";
 
-const log = console.log;
+const log = console.log; 
 
 const Landing = () => {
   const [subscribe, setSubscribe] = useState(false);
@@ -35,8 +35,6 @@ const Landing = () => {
         onFormDisplay={formDisplay}
         onSubmit={submit}
         onHandleSubmit={handleSubmit}
-        onError={error}
-        onHandleError={handleError}
       />
       <Thanks onSubmit={submit} />
     </Layout>

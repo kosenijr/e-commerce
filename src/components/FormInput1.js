@@ -3,8 +3,7 @@ import styles from "../styles/FormInput.module.css";
 
 const log = console.log;
 
-const FormInput = (props) => {
-  const {setError, error} = props;
+const FormInput = (props, onError, onHandleError) => {
 
   const handleInputChange = (e) => {
     let [inputValue, isValid] = [e.target.value, false];
@@ -23,6 +22,12 @@ const FormInput = (props) => {
           inputValue
         );
         break;
+      // case "Phone Number":
+        // inputValue = formatPhoneNumber(inputValue); // Format phone number
+        // const formattedPhoneNumber = formatPhoneNumber(inputValue);
+        // setError(!/^\(\d{3}\) \d{3}-\d{4}$/.test(formattedPhoneNumber));
+        isValid = /^\(\d{3}\) \d{3}-\d{4}$/.test(inputValue);
+        // break;
       case "State":
         isValid = /^[A-Za-z]{2}$/.test(inputValue);
         break;
@@ -33,7 +38,8 @@ const FormInput = (props) => {
         isValid = true; // No validation by default
         break;
     }
-    setError(!isValid);
+    onHandleError(!isValid);
+    log(onHandleError);
   };
 
   return (
@@ -48,7 +54,7 @@ const FormInput = (props) => {
         />
       </section>
       <section className={styles["section-2"]}>
-        {error && (
+        {onError && (
           <p>Incorrect input. Please enter your {props.name.toLowerCase()}.</p>
         )}
         {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}
