@@ -4,7 +4,7 @@ import styles from "../styles/FormInput.module.css";
 const log = console.log;
 
 const FormInput = (props) => {
-  const {setError, error} = props;
+  const { error, setError } = props;
 
   const handleInputChange = (e) => {
     let [inputValue, isValid] = [e.target.value, false];
@@ -20,7 +20,7 @@ const FormInput = (props) => {
         break;
       case "Email":
         isValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-          inputValue
+          inputValue,
         );
         break;
       case "State":

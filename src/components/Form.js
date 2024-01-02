@@ -13,8 +13,15 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
     addressLine2: false,
     city: false,
     state: false,
-    zipCode: false
-  })
+    zipCode: false,
+  });
+
+  const handleInputChange = (fieldName, isError) => {
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [fieldName]: isError,
+    }));
+  };
 
   return (
     <div
@@ -29,7 +36,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           name="First Name"
           placeholder="John"
           value="firstName"
-          setError={setError}
+          setError={(isError) => handleInputChange("firstName", isError)}
           error={errors.firstName}
         />
 
@@ -37,7 +44,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           name="Last Name"
           placeholder="Doe"
           value="lastName"
-          setError={setError}
+          setError={(isError) => handleInputChange("lastName", isError)}
           error={errors.lastName}
         />
 
@@ -45,7 +52,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           name="Email"
           placeholder="john.doe@example.com"
           value="email"
-          setError={setError}
+          setError={(isError) => handleInputChange("email", isError)}
           error={errors.email}
         />
 
@@ -55,7 +62,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           name="Address Line 1"
           placeholder="123 Main Street"
           value="addressLine1"
-          setError={setError}
+          setError={(isError) => handleInputChange("addressLine1", isError)}
           error={errors.addressLine1}
         />
 
@@ -63,7 +70,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           name="Address Line 2"
           placeholder="Apt #305"
           value="addressLine2"
-          setError={setError}
+          setError={(isError) => handleInputChange("addressLine2", isError)}
           error={errors.addressLine2}
         />
 
@@ -71,7 +78,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           name="City"
           placeholder="Anytown"
           value="city"
-          setError={setError}
+          setError={(isError) => handleInputChange("city", isError)}
           error={errors.city}
         />
 
@@ -79,7 +86,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           name="State"
           placeholder="CA"
           value="state"
-          setError={setError}
+          setError={(isError) => handleInputChange("state", isError)}
           error={errors.state}
         />
 
@@ -87,7 +94,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           name="Zip Code"
           placeholder="12345"
           value="zipCode"
-          setError={setError}
+          setError={(isError) => handleInputChange("zipCode", isError)}
           error={errors.zipCode}
         />
 
