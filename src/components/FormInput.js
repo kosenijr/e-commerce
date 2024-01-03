@@ -13,14 +13,16 @@ const FormInput = (props) => {
     switch (props.name) {
       case "First Name":
       case "Last Name":
+      case "City":
+        isValid = /^[A-Za-z\s-]+$/.test(inputValue);
+        break;
       case "Address Line 1":
       case "Address Line 2":
-      case "City":
-        isValid = /^[A-Za-z\s]+$/.test(inputValue);
+        isValid = / /.test(inputValue);
         break;
       case "Email":
         isValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-          inputValue,
+          inputValue
         );
         break;
       case "State":
@@ -58,3 +60,5 @@ const FormInput = (props) => {
 };
 
 export default FormInput;
+
+// error: work on address lines
