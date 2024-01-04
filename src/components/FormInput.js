@@ -4,7 +4,7 @@ import styles from "../styles/FormInput.module.css";
 const log = console.log;
 
 const FormInput = (props) => {
-  const { error, setError } = props;
+  const { errors, setErrors } = props;
 
   const handleInputChange = (e) => {
     let [inputValue, isValid] = [e.target.value, false];
@@ -17,8 +17,10 @@ const FormInput = (props) => {
         isValid = /^[A-Za-z\s-]+$/.test(inputValue);
         break;
       case "Address Line 1":
+        isValid = /^\d{1,5}[-\s]?\d{0,5}\s[A-Za-z\s]+$/.test(inputValue);
+        break;
       case "Address Line 2":
-        isValid = / /.test(inputValue);
+        isValid = /^[A-Za-z0-9\s#-]*$/.test(inputValue);
         break;
       case "Email":
         isValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
@@ -35,7 +37,7 @@ const FormInput = (props) => {
         isValid = true; // No validation by default
         break;
     }
-    setError(!isValid);
+    setErrors(!isValid);
   };
 
   return (
@@ -50,7 +52,7 @@ const FormInput = (props) => {
         />
       </section>
       <section className={styles["section-2"]}>
-        {error && (
+        {errors && (
           <p>Incorrect input. Please enter your {props.name.toLowerCase()}.</p>
         )}
         {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}

@@ -3,7 +3,16 @@ import FormInput from "./FormInput";
 import PhoneNumberInput from "./PhoneNumberInput";
 import styles from "../styles/Form.module.css";
 
-const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
+const log = console.log;
+
+const Form = ({
+  onErrors,
+  onFormDisplay,
+  onHandleErrors,
+  onHandleSubmit,
+  onSubmit,
+}) => {
+
   const [errors, setErrors] = useState({
     firstName: false,
     lastName: false,
@@ -16,12 +25,35 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
     zipCode: false,
   });
 
+  const [values, setValues] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    addressLine1: "",
+    addressLine2: "",
+    city: "",
+    state: "",
+    zipCode: "",
+  });
+
   const handleInputChange = (fieldName, isError) => {
     setErrors((prevErrors) => ({
       ...prevErrors,
       [fieldName]: isError,
     }));
+    onHandleErrors(Object.values(errors).some((error) => error));
   };
+
+  const handleValues = (fieldName, e) => {
+  setValues((prevValues) => ({
+    ...prevValues,
+    [fieldName]: `${e.target.value}`
+  }));
+  };
+
+  log(values);
+
 
   return (
     <div
@@ -35,25 +67,26 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
         <FormInput
           name="First Name"
           placeholder="John"
-          value="firstName"
-          setError={(isError) => handleInputChange("firstName", isError)}
-          error={errors.firstName}
+          value={values.firstName}
+          handleValues={handleValues}
+          setErrors={(isError) => handleInputChange("firstName", isError)}
+          errors={errors.firstName}
         />
 
         <FormInput
           name="Last Name"
           placeholder="Doe"
           value="lastName"
-          setError={(isError) => handleInputChange("lastName", isError)}
-          error={errors.lastName}
+          setErrors={(isError) => handleInputChange("lastName", isError)}
+          errors={errors.lastName}
         />
 
         <FormInput
           name="Email"
           placeholder="john.doe@example.com"
           value="email"
-          setError={(isError) => handleInputChange("email", isError)}
-          error={errors.email}
+          setErrors={(isError) => handleInputChange("email", isError)}
+          errors={errors.email}
         />
 
         <PhoneNumberInput />
@@ -62,40 +95,40 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           name="Address Line 1"
           placeholder="123 Main Street"
           value="addressLine1"
-          setError={(isError) => handleInputChange("addressLine1", isError)}
-          error={errors.addressLine1}
+          setErrors={(isError) => handleInputChange("addressLine1", isError)}
+          errors={errors.addressLine1}
         />
 
         <FormInput
           name="Address Line 2"
           placeholder="Apt #305"
           value="addressLine2"
-          setError={(isError) => handleInputChange("addressLine2", isError)}
-          error={errors.addressLine2}
+          setErrors={(isError) => handleInputChange("addressLine2", isError)}
+          errors={errors.addressLine2}
         />
 
         <FormInput
           name="City"
           placeholder="Anytown"
           value="city"
-          setError={(isError) => handleInputChange("city", isError)}
-          error={errors.city}
+          setErrors={(isError) => handleInputChange("city", isError)}
+          errors={errors.city}
         />
 
         <FormInput
           name="State"
           placeholder="CA"
           value="state"
-          setError={(isError) => handleInputChange("state", isError)}
-          error={errors.state}
+          setErrors={(isError) => handleInputChange("state", isError)}
+          errors={errors.state}
         />
 
         <FormInput
           name="Zip Code"
           placeholder="12345"
           value="zipCode"
-          setError={(isError) => handleInputChange("zipCode", isError)}
-          error={errors.zipCode}
+          setErrors={(isError) => handleInputChange("zipCode", isError)}
+          errors={errors.zipCode}
         />
 
         {/* button */}
@@ -103,6 +136,7 @@ const Form = ({ onFormDisplay, onHandleSubmit, onSubmit }) => {
           className={styles["submit-button"]}
           type="submit"
           onClick={onHandleSubmit}
+          disabled={onErrors}
         >
           Submit
         </button>

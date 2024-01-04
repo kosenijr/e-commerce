@@ -9,17 +9,18 @@ const log = console.log;
 const Landing = () => {
   const [subscribe, setSubscribe] = useState(false);
   const [formDisplay, setFormDisplay] = useState(false);
+  const [hasErrors, setHasErrors] = useState(false);
   const [submit, setSubmit] = useState(false);
+
+  const handleErrors = (hasErrors) => {
+    setHasErrors(hasErrors);
+  }
 
   const handleSubscribe = () => {
     // console.log('this button works!');
     setSubscribe(!subscribe);
     setFormDisplay(!formDisplay);
   };
-
-  const handleError = () => {
-    
-  }
 
   const handleSubmit = (e) => {
     // implement preventDefault() to implement submit button properly
@@ -33,6 +34,8 @@ const Landing = () => {
       <Display onSubscribe={subscribe} onHandleSubscribe={handleSubscribe} />
       <Form
         onFormDisplay={formDisplay}
+        onErrors={hasErrors}
+        onHandleErrors={handleErrors}
         onSubmit={submit}
         onHandleSubmit={handleSubmit}
       />
