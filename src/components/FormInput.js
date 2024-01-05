@@ -42,7 +42,7 @@ const FormInput = (props) => {
       <section className={styles["section-1"]}>
         <label>{props.name}</label>
         <input
-          name={props.value}
+          name={props.name}
           onChange={handleInputChange}
           placeholder={props.placeholder}
           type="text"
