@@ -22,7 +22,7 @@ const FormInput = (props) => {
         break;
       case "Email":
         setErrors(
-          !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputValue)
+          !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputValue),
         );
         break;
       case "State":

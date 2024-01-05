@@ -84,7 +84,9 @@ const Form = ({
           name="First Name"
           placeholder="John"
           value={values.firstName}
-          handleValues={(e) => handleValues("firstName", e)} // Pass the field name and event
+          handleInputChange={(inputValue) =>
+            handleValues("firstName", inputValue)
+          }
           setErrors={(isError) => handleInputChange("firstName", isError)}
           errors={errors.firstName}
         />
