@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 
-const log = console.log;
-
 const PhoneNumberInput = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const formatPhoneNumber = (input) => {
     const numericInput = input.replace(/\D/g, "");
-    
+
     const formattedNumber = numericInput.replace(
-      /^1(\d{3})(\d{3})(\d{4})/,
+      /^1?(\d{3})(\d{3})(\d{4})$/,
       "($1) $2-$3"
     );
     return formattedNumber;

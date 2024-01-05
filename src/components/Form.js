@@ -12,7 +12,6 @@ const Form = ({
   onHandleSubmit,
   onSubmit,
 }) => {
-
   const [errors, setErrors] = useState({
     firstName: false,
     lastName: false,
@@ -46,14 +45,20 @@ const Form = ({
   };
 
   const handleValues = (fieldName, e) => {
-  setValues((prevValues) => ({
-    ...prevValues,
-    [fieldName]: `${e.target.value}`
-  }));
+    setValues((prevValues) => ({
+      ...prevValues,
+      [fieldName]: e.target.value,
+    }));
   };
 
-  log(values);
+  // are all values entered/has there been any errors
+  const areAllValuesEntered = Object.values(values).every(
+    (value) => value.trim() !== ""
+  );
 
+  const hasAnyErrors = Object.values(errors).some((error) => error);
+
+  log(`areAllValuesEntered: ${!areAllValuesEntered}, hasAnyErrors: ${hasAnyErrors}`);
 
   return (
     <div
@@ -76,7 +81,7 @@ const Form = ({
         <FormInput
           name="Last Name"
           placeholder="Doe"
-          value="lastName"
+          value={values.lastName}
           setErrors={(isError) => handleInputChange("lastName", isError)}
           errors={errors.lastName}
         />
@@ -84,7 +89,7 @@ const Form = ({
         <FormInput
           name="Email"
           placeholder="john.doe@example.com"
-          value="email"
+          value={values.email}
           setErrors={(isError) => handleInputChange("email", isError)}
           errors={errors.email}
         />
@@ -94,7 +99,7 @@ const Form = ({
         <FormInput
           name="Address Line 1"
           placeholder="123 Main Street"
-          value="addressLine1"
+          value={values.addressLine1}
           setErrors={(isError) => handleInputChange("addressLine1", isError)}
           errors={errors.addressLine1}
         />
@@ -102,7 +107,7 @@ const Form = ({
         <FormInput
           name="Address Line 2"
           placeholder="Apt #305"
-          value="addressLine2"
+          value={values.addressLine2}
           setErrors={(isError) => handleInputChange("addressLine2", isError)}
           errors={errors.addressLine2}
         />
@@ -110,7 +115,7 @@ const Form = ({
         <FormInput
           name="City"
           placeholder="Anytown"
-          value="city"
+          value={values.city}
           setErrors={(isError) => handleInputChange("city", isError)}
           errors={errors.city}
         />
@@ -118,7 +123,7 @@ const Form = ({
         <FormInput
           name="State"
           placeholder="CA"
-          value="state"
+          value={values.state}
           setErrors={(isError) => handleInputChange("state", isError)}
           errors={errors.state}
         />
@@ -126,7 +131,7 @@ const Form = ({
         <FormInput
           name="Zip Code"
           placeholder="12345"
-          value="zipCode"
+          value={values.zipCode}
           setErrors={(isError) => handleInputChange("zipCode", isError)}
           errors={errors.zipCode}
         />
@@ -135,8 +140,8 @@ const Form = ({
         <button
           className={styles["submit-button"]}
           type="submit"
+          disabled={!areAllValuesEntered || hasAnyErrors}
           onClick={onHandleSubmit}
-          disabled={onErrors}
         >
           Submit
         </button>

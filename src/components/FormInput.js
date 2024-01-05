@@ -1,43 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../styles/FormInput.module.css";
-
-const log = console.log;
 
 const FormInput = (props) => {
   const { errors, setErrors } = props;
 
   const handleInputChange = (e) => {
-    let [inputValue, isValid] = [e.target.value, false];
+    const inputValue = e.target.value;
 
     // set up switch statement
     switch (props.name) {
       case "First Name":
       case "Last Name":
       case "City":
-        isValid = /^[A-Za-z\s-]+$/.test(inputValue);
+        setErrors(!/^[A-Za-z\s-]+$/.test(inputValue));
         break;
       case "Address Line 1":
-        isValid = /^\d{1,5}[-\s]?\d{0,5}\s[A-Za-z\s]+$/.test(inputValue);
+        setErrors(!/^\d{1,5}[-\s]?\w*\.?\s[A-Za-z\s0-9#-]+$/.test(inputValue));
         break;
       case "Address Line 2":
-        isValid = /^[A-Za-z0-9\s#-]*$/.test(inputValue);
+        setErrors(!/^[A-Za-z0-9\s#-]*$/.test(inputValue));
         break;
       case "Email":
-        isValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-          inputValue
+        setErrors(
+          !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputValue)
         );
         break;
       case "State":
-        isValid = /^[A-Za-z]{2}$/.test(inputValue);
+        setErrors(!/^[A-Za-z]{2}$/.test(inputValue));
         break;
       case "Zip Code":
-        isValid = /^\d{5}$/.test(inputValue);
+        setErrors(!/^\d{5}$/.test(inputValue));
         break;
       default:
-        isValid = true; // No validation by default
+        setErrors(false); // No validation by default
         break;
     }
-    setErrors(!isValid);
   };
 
   return (

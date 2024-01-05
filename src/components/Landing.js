@@ -4,8 +4,6 @@ import Display from "./Display";
 import Form from "./Form";
 import Thanks from "./Thanks";
 
-const log = console.log; 
-
 const Landing = () => {
   const [subscribe, setSubscribe] = useState(false);
   const [formDisplay, setFormDisplay] = useState(false);
@@ -25,6 +23,7 @@ const Landing = () => {
   const handleSubmit = (e) => {
     // implement preventDefault() to implement submit button properly
     e.preventDefault();
+    console.log("Form Submitted!")
     setSubmit(!submit);
     };
 
