@@ -12,7 +12,7 @@ const Landing = () => {
 
   const handleErrors = (hasErrors) => {
     setHasErrors(hasErrors);
-  }
+  };
 
   const handleSubscribe = () => {
     // console.log('this button works!');
@@ -23,9 +23,9 @@ const Landing = () => {
   const handleSubmit = (e) => {
     // implement preventDefault() to implement submit button properly
     e.preventDefault();
-    console.log("Form Submitted!")
+    console.log("Form Submitted!");
     setSubmit(!submit);
-    };
+  };
 
   return (
     <Layout>

@@ -44,21 +44,32 @@ const Form = ({
     onHandleErrors(Object.values(errors).some((error) => error));
   };
 
+  // const handleValues = (fieldName, e) => {
+  //   setValues((prevValues) => ({
+  //     ...prevValues,
+  //     [fieldName]: e.target.value,
+  //   }));
+  // };
+
   const handleValues = (fieldName, e) => {
+    const { value } = e.target;
     setValues((prevValues) => ({
       ...prevValues,
-      [fieldName]: e.target.value,
+      [fieldName]: value,
     }));
+    log(`Field ${fieldName} value:`, value); // Log the value after it's updated
   };
 
   // are all values entered/has there been any errors
   const areAllValuesEntered = Object.values(values).every(
-    (value) => value.trim() !== ""
+    (value) => value.trim() !== "",
   );
+
+  log(values);
 
   const hasAnyErrors = Object.values(errors).some((error) => error);
 
-  log(`areAllValuesEntered: ${!areAllValuesEntered}, hasAnyErrors: ${hasAnyErrors}`);
+  // log(`areAllValuesEntered: ${!areAllValuesEntered}, hasAnyErrors: ${hasAnyErrors}`);
 
   return (
     <div
@@ -73,7 +84,7 @@ const Form = ({
           name="First Name"
           placeholder="John"
           value={values.firstName}
-          handleValues={handleValues}
+          handleValues={(e) => handleValues("firstName", e)} // Pass the field name and event
           setErrors={(isError) => handleInputChange("firstName", isError)}
           errors={errors.firstName}
         />
