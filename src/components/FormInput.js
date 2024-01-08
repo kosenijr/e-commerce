@@ -39,7 +39,6 @@ const FormInput = (props) => {
     }
   };
 
-  log(props.value);
   return (
     <div className={styles["formInput"]}>
       <section className={styles["section-1"]}>
