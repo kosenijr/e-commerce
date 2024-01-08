@@ -10,8 +10,8 @@ const Landing = () => {
   const [hasErrors, setHasErrors] = useState(false);
   const [submit, setSubmit] = useState(false);
 
-  const handleErrors = (hasErrors) => {
-    setHasErrors(hasErrors);
+  const handleErrors = () => {
+    setHasErrors(!hasErrors);
   };
 
   const handleSubscribe = () => {
