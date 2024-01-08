@@ -66,7 +66,7 @@ const Form = ({
         <FormInput
           name="First Name"
           placeholder="John"
-          handleValueChange={handleValueChange}
+          handleValueChange={(e) => handleValueChange(e)}
           value={values.firstName}
           setErrors={(isError) => handleErrorChange("firstName", isError)}
           errors={errors.firstName}
@@ -74,6 +74,7 @@ const Form = ({
         <FormInput
           name="Last Name"
           placeholder="Doe"
+          handleValueChange={(e) => handleValueChange(e)}
           value={values.lastName}
           setErrors={(isError) => handleErrorChange("lastName", isError)}
           errors={errors.lastName}
@@ -81,6 +82,7 @@ const Form = ({
         <FormInput
           name="Email"
           placeholder="john.doe@example.com"
+          handleValueChange={(e) => handleValueChange(e)}
           value={values.email}
           setErrors={(isError) => handleErrorChange("email", isError)}
           errors={errors.email}
@@ -89,6 +91,7 @@ const Form = ({
         <FormInput
           name="Address Line 1"
           placeholder="123 Main Street"
+          handleValueChange={(e) => handleValueChange(e)}
           value={values.addressLine1}
           setErrors={(isError) => handleErrorChange("addressLine1", isError)}
           errors={errors.addressLine1}
@@ -96,6 +99,7 @@ const Form = ({
         <FormInput
           name="Address Line 2"
           placeholder="Apt #305"
+          handleValueChange={(e) => handleValueChange(e)}
           value={values.addressLine2}
           setErrors={(isError) => handleErrorChange("addressLine2", isError)}
           errors={errors.addressLine2}
@@ -103,6 +107,7 @@ const Form = ({
         <FormInput
           name="City"
           placeholder="Anytown"
+          handleValueChange={(e) => handleValueChange(e)}
           value={values.city}
           setErrors={(isError) => handleErrorChange("city", isError)}
           errors={errors.city}
@@ -110,6 +115,7 @@ const Form = ({
         <FormInput
           name="State"
           placeholder="CA"
+          handleValueChange={(e) => handleValueChange(e)}
           value={values.state}
           setErrors={(isError) => handleErrorChange("state", isError)}
           errors={errors.state}
@@ -117,6 +123,7 @@ const Form = ({
         <FormInput
           name="Zip Code"
           placeholder="12345"
+          handleValueChange={(e) => handleValueChange(e)}
           value={values.zipCode}
           setErrors={(isError) => handleErrorChange("zipCode", isError)}
           errors={errors.zipCode}

@@ -4,7 +4,7 @@ import styles from "../styles/FormInput.module.css";
 const log = console.log;
 
 const FormInput = (props) => {
-  const { errors, setErrors } = props;
+  const { errors, handleValueChange, setErrors } = props;
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
@@ -45,7 +45,8 @@ const FormInput = (props) => {
         <label>{props.name}</label>
         <input
           name={props.name}
-          onChange={handleInputChange}
+          onChange={handleValueChange}
+          handleInputChange={handleInputChange}
           placeholder={props.placeholder}
           type="text"
         />
