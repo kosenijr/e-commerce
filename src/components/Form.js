@@ -43,7 +43,8 @@ const Form = ({
       ...prevErrors,
       [fieldName]: isError,
     }));
-    // onHandleErrors(Object.values(errors).some((error) => error));
+    // for submit button: must connect (hasAnyErrors)
+    onHandleErrors(Object.values(errors).some((error) => error));
   };
 
   const handleValueChange = (e) => {
@@ -51,8 +52,8 @@ const Form = ({
       ...prevValues,
       [e.target.name]: e.target.value,
     }));
+    log(`Field ${e.target.name} changed to: ${e.target.value}`);
   };
-  log(values.firstName);
 
   return (
     <div
