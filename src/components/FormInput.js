@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "../styles/FormInput.module.css";
 
+const log = console.log;
+
 const FormInput = (props) => {
   const { errors, setErrors } = props;
 
@@ -37,6 +39,7 @@ const FormInput = (props) => {
     }
   };
 
+  log(props.value);
   return (
     <div className={styles["formInput"]}>
       <section className={styles["section-1"]}>

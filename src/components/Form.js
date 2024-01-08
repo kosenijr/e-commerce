@@ -5,8 +5,14 @@ import PhoneNumberInput from "./PhoneNumberInput";
 
 const log = console.log;
 
-const Form = ({ onFormDisplay, onHandleErrors, onHandleSubmit, onSubmit }) => {
-  // checking errors within fields
+const Form = ({
+  onFormDisplay,
+  onErrors,
+  onHandleErrors,
+  onSubmit,
+  onHandleSubmit,
+}) => {
+  // errors within fields
   const [errors, setErrors] = useState({
     firstName: false,
     lastName: false,
@@ -19,8 +25,8 @@ const Form = ({ onFormDisplay, onHandleErrors, onHandleSubmit, onSubmit }) => {
     zipCode: false,
   });
 
-  // getting values within fields
-  const [values, setValues] = useState({
+  // values within fields
+  let [values, setValues] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -37,16 +43,16 @@ const Form = ({ onFormDisplay, onHandleErrors, onHandleSubmit, onSubmit }) => {
       ...prevErrors,
       [fieldName]: isError,
     }));
-    onHandleErrors(Object.values(errors).some((error) => error));
+    // onHandleErrors(Object.values(errors).some((error) => error));
   };
 
   const handleValueChange = (e) => {
     setValues((prevValues) => ({
       ...prevValues,
-      [Object.keys(values)]: e.target.value
-    }))
-    log(values)
+      [e.target.name]: e.target.value,
+    }));
   };
+  log(values.firstName);
 
   return (
     <div
@@ -59,8 +65,8 @@ const Form = ({ onFormDisplay, onHandleErrors, onHandleSubmit, onSubmit }) => {
         <FormInput
           name="First Name"
           placeholder="John"
+          handleValueChange={handleValueChange}
           value={values.firstName}
-          onChange={handleValueChange}
           setErrors={(isError) => handleErrorChange("firstName", isError)}
           errors={errors.firstName}
         />
