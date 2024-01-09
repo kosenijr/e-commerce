@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styles from "../styles/Form.module.css";
 import FormInput from "./FormInput";
+import State from "./State";
 import PhoneNumberInput from "./PhoneNumberInput";
 
 const log = console.log;
 
 const Form = ({
   onFormDisplay,
-  onErrors,
   onHandleErrors,
   onSubmit,
   onHandleSubmit,

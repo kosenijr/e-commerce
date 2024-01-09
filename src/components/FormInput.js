@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/FormInput.module.css";
+import e from "cors";
 
 const log = console.log;
 
@@ -20,7 +21,7 @@ const FormInput = (props) => {
         setErrors(!/^\d{1,5}[-\s]?\w*\.?\s[A-Za-z\s0-9#-]+$/.test(inputValue));
         break;
       case "Address Line 2":
-        setErrors(!/^[A-Za-z0-9\s#-]*$/.test(inputValue));
+        setErrors(!/^[A-Za-z0-9\s#-.]*$/.test(inputValue));
         break;
       case "Email":
         setErrors(
@@ -40,18 +41,17 @@ const FormInput = (props) => {
   };
 
   return (
-    <div className={styles["formInput"]}>
+    <div className={styles["formInput"]} onChange={handleInputChange}>
       <section className={styles["section-1"]}>
         <label>{props.name}</label>
         <input
           name={props.name}
           onChange={handleValueChange}
-          handleInputChange={handleInputChange}
           placeholder={props.placeholder}
           type="text"
         />
       </section>
-      <section className={styles["section-2"]}>
+      <section className={styles["section-2"]} >
         {errors && (
           <p>Incorrect input. Please enter your {props.name.toLowerCase()}.</p>
         )}
