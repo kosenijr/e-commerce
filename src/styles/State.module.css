@@ -1,0 +1,23 @@
+label {
+  width: 8em;
+  display: inline-flex;
+}
+
+select {
+  width: 12.5vw;
+  border-radius: 30px;
+  display: inline-flex;
+}
+
+.option-drop {
+  /* padding-left: 0.5em; */
+  padding-left: 4em;
+}
+
+.option-drop[type="text"] {
+  padding: 0 0.5em;
+}
+
+select#stateDropdown {
+    padding-left: 4em;
+}

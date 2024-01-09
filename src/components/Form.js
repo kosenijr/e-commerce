@@ -6,12 +6,7 @@ import PhoneNumberInput from "./PhoneNumberInput";
 
 const log = console.log;
 
-const Form = ({
-  onFormDisplay,
-  onHandleErrors,
-  onSubmit,
-  onHandleSubmit,
-}) => {
+const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
   // errors within fields
   const [errors, setErrors] = useState({
     firstName: false,
@@ -112,14 +107,9 @@ const Form = ({
           setErrors={(isError) => handleErrorChange("city", isError)}
           errors={errors.city}
         />
-        <FormInput
-          name="State"
-          placeholder="CA"
-          handleValueChange={(e) => handleValueChange(e)}
-          value={values.state}
-          setErrors={(isError) => handleErrorChange("state", isError)}
-          errors={errors.state}
-        />
+
+        <State className={styles["state-drop"]} type="text"/>
+
         <FormInput
           name="Zip Code"
           placeholder="12345"
