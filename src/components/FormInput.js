@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../styles/FormInput.module.css";
-import e from "cors";
 
 const log = console.log;
 
@@ -51,7 +50,7 @@ const FormInput = (props) => {
           type="text"
         />
       </section>
-      <section className={styles["section-2"]} >
+      <section className={styles["section-2"]}>
         {errors && (
           <p>Incorrect input. Please enter your {props.name.toLowerCase()}.</p>
         )}

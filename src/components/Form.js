@@ -48,7 +48,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
       [e.target.name]: e.target.value,
     }));
     log(`Field ${e.target.name} changed to: ${e.target.value}`);
-    log()
+    log();
   };
 
   return (
@@ -83,7 +83,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           setErrors={(isError) => handleErrorChange("email", isError)}
           errors={errors.email}
         />
-        <PhoneNumberInput />
+        <PhoneNumberInput errors={errors.phoneNumber} />
         <FormInput
           name="Address Line 1"
           placeholder="123 Main Street"
@@ -109,8 +109,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           errors={errors.city}
         />
 
-        <State 
-        />
+        <State errors={errors.state} />
 
         <FormInput
           name="Zip Code"

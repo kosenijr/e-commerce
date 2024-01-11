@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import styles from "../styles/PhoneNumberInput.module.css";
 
-const PhoneNumberInput = () => {
+const PhoneNumberInput = (errors) => {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const formatPhoneNumber = (input) => {
@@ -8,7 +9,7 @@ const PhoneNumberInput = () => {
 
     const formattedNumber = numericInput.replace(
       /^1?(\d{3})(\d{3})(\d{4})$/,
-      "($1) $2-$3"
+      "($1) $2-$3",
     );
     return formattedNumber;
   };
@@ -34,9 +35,7 @@ const PhoneNumberInput = () => {
       </section>
 
       <section className={styles["section-2"]}>
-        {onError && (
-          <p>Incorrect input. Please select your state.</p>
-        )}
+        {errors && <p>Incorrect input. Please select your state.</p>}
         {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}
       </section>
     </div>

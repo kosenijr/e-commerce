@@ -4,7 +4,7 @@ import styles from "../styles/State.module.css";
 const log = console.log;
 
 // set up component
-const State = () => {
+const State = (errors) => {
   // set state
   const [selectedState, setSelectedState] = useState("");
 
@@ -99,9 +99,7 @@ const State = () => {
       </section>
 
       <section className={styles["section-2"]}>
-        {onError && (
-          <p>Incorrect input. Please enter your phone number.</p>
-        )}
+        {errors && <p>Incorrect input. Please enter your phone number.</p>}
         {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}
       </section>
     </div>
