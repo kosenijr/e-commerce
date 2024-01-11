@@ -22,14 +22,23 @@ const PhoneNumberInput = () => {
 
   return (
     <div>
-      <label>Phone Number</label>
-      <input
-        name="Phone Number"
-        type="text"
-        placeholder="(123) 456-7890"
-        value={phoneNumber}
-        onChange={handleNumberChange}
-      />
+      <section className={styles["section-1"]}>
+        <label>Phone Number</label>
+        <input
+          name="Phone Number"
+          type="text"
+          placeholder="(123) 456-7890"
+          value={phoneNumber}
+          onChange={handleNumberChange}
+        />
+      </section>
+
+      <section className={styles["section-2"]}>
+        {onError && (
+          <p>Incorrect input. Please select your state.</p>
+        )}
+        {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}
+      </section>
     </div>
   );
 };

@@ -48,6 +48,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
       [e.target.name]: e.target.value,
     }));
     log(`Field ${e.target.name} changed to: ${e.target.value}`);
+    log()
   };
 
   return (
@@ -108,7 +109,8 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           errors={errors.city}
         />
 
-        <State className={styles["state-drop"]} type="text"/>
+        <State 
+        />
 
         <FormInput
           name="Zip Code"

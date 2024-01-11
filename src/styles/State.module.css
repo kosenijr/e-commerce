@@ -4,20 +4,16 @@ label {
 }
 
 select {
-  width: 12.5vw;
+  width: 15vw;
   border-radius: 30px;
   display: inline-flex;
+  padding-left: 0.4em;
 }
 
-.option-drop {
-  /* padding-left: 0.5em; */
-  padding-left: 4em;
+select {
+  color: gray
 }
 
-.option-drop[type="text"] {
-  padding: 0 0.5em;
-}
-
-select#stateDropdown {
-    padding-left: 4em;
+select:after {
+  color: black;
 }

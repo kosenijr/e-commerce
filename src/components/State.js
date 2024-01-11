@@ -10,62 +10,62 @@ const State = () => {
 
   // set up geographic array
   const geoUS = [
-    "New York",
-    "Alabama",
-    "Alaska",
-    "American Samoa",
-    "Arizona",
-    "Arkansas",
-    "California",
-    "Colorado",
-    "Connecticut",
-    "Delaware",
-    "District of Columbia",
-    "Florida",
-    "Georgia",
-    "Guam",
-    "Hawaii",
-    "Idaho",
-    "Illinois",
-    "Indiana",
-    "Iowa",
-    "Kansas",
-    "Kentucky",
-    "Louisiana",
-    "Maine",
-    "Maryland",
-    "Massachusetts",
-    "Michigan",
-    "Minnesota",
-    "Mississippi",
-    "Missouri",
-    "Montana",
-    "Nebraska",
-    "Nevada",
-    "New Hampshire",
-    "New Jersey",
-    "New Mexico",
-    "North Carolina",
-    "North Dakota",
-    "Northern Mariana Islands",
-    "Ohio",
-    "Oklahoma",
-    "Oregon",
-    "Pennsylvania",
-    "Puerto Rico",
-    "Rhode Island",
-    "South Carolina",
-    "South Dakota",
-    "Tennessee",
-    "Texas",
-    "U.S. Virgin Islands",
-    "Utah",
-    "Vermont",
-    "Virginia",
-    "Washington",
-    "West Virginia",
-    "Wisconsin",
-    "Wyoming",
+    "NY",
+    "AL",
+    "AK",
+    "AS",
+    "AZ",
+    "AR",
+    "CA",
+    "CO",
+    "CT",
+    "DE",
+    "DC",
+    "FL",
+    "GA",
+    "GU",
+    "HI",
+    "ID",
+    "IL",
+    "IN",
+    "IA",
+    "KS",
+    "KY",
+    "LA",
+    "ME",
+    "MD",
+    "MA",
+    "MI",
+    "MN",
+    "MP",
+    "MS",
+    "MO",
+    "MT",
+    "NE",
+    "NV",
+    "NH",
+    "NJ",
+    "NM",
+    "NC",
+    "ND",
+    "OH",
+    "OK",
+    "OR",
+    "PA",
+    "PR",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "VI",
+    "UT",
+    "VT",
+    "VA",
+    "WA",
+    "WV",
+    "WI",
+    "WY",
   ];
   // log(geoUS);
 
@@ -76,19 +76,34 @@ const State = () => {
 
   return (
     <div>
-      <label htmlFor="stateDropdown">State or Territory</label>
-      <select
-        id="stateDropdown"
-        value={selectedState}
-        onChange={handleStateChange}
-      >
-        <option className={styles["option-drop"]} value="" type="text">Select ...</option>
-        {geoUS.map((state, index) => (
-          <option key={index} value={state}>
-            {state}
+      <section className={styles["section-1"]}>
+        <label htmlFor="stateDropdown">State or Territory</label>
+        <select
+          id="stateDropdown"
+          value={selectedState}
+          onChange={handleStateChange}
+        >
+          <option className={styles["option-drop"]} value="">
+            Select ...
           </option>
-        ))}
-      </select>
+          {geoUS.map((state, index) => (
+            <option
+              className={styles["option-state"]}
+              key={index}
+              value={state}
+            >
+              {state}
+            </option>
+          ))}
+        </select>
+      </section>
+
+      <section className={styles["section-2"]}>
+        {onError && (
+          <p>Incorrect input. Please enter your phone number.</p>
+        )}
+        {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}
+      </section>
     </div>
   );
 };
