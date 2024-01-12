@@ -83,7 +83,14 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           setErrors={(isError) => handleErrorChange("email", isError)}
           errors={errors.email}
         />
-        <PhoneNumberInput errors={errors.phoneNumber} />
+        <PhoneNumberInput
+          name="Phone Number Input"
+          value={values.phoneNumber}
+          errors={errors.phoneNumber}
+          handleErrorChange={handleErrorChange}
+          setErrors={(isError) => handleErrorChange("phoneNumber", isError)}
+        />
+
         <FormInput
           name="Address Line 1"
           placeholder="123 Main Street"
@@ -109,7 +116,13 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           errors={errors.city}
         />
 
-        <State errors={errors.state} />
+        <State
+          name="State"
+          value={values.state}
+          errors={errors.state}
+          handleErrorChange={handleErrorChange}
+          setErrors={(isError) => handleErrorChange("state", isError)}
+        />
 
         <FormInput
           name="Zip Code"

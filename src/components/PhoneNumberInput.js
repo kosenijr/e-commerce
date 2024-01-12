@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/PhoneNumberInput.module.css";
 
-const PhoneNumberInput = (errors) => {
+const PhoneNumberInput = (errors, handleErrorChange, setErrors) => {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const formatPhoneNumber = (input) => {
