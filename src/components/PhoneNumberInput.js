@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "../styles/PhoneNumberInput.module.css";
 
+const log = console.log;
+
 const PhoneNumberInput = (errors, handleErrorChange, setErrors) => {
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -19,6 +21,8 @@ const PhoneNumberInput = (errors, handleErrorChange, setErrors) => {
     const formattedNumber = formatPhoneNumber(input);
     //  update with formatted number
     setPhoneNumber(formattedNumber);
+    log(formattedNumber, input, formattedNumber !== input);
+    // setErrors(!/^\d+$/.test(input));
   };
 
   return (
