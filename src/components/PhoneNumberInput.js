@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/PhoneNumberInput.module.css";
 
-const PhoneNumberInput = (errors, handleErrorChange, setErrors) => {
+const PhoneNumberInput = (errors, setErrors) => {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const formatPhoneNumber = (input) => {
@@ -9,7 +9,7 @@ const PhoneNumberInput = (errors, handleErrorChange, setErrors) => {
 
     const formattedNumber = numericInput.replace(
       /^1?(\d{3})(\d{3})(\d{4})$/,
-      "($1) $2-$3",
+      "($1) $2-$3"
     );
     return formattedNumber;
   };
@@ -19,6 +19,7 @@ const PhoneNumberInput = (errors, handleErrorChange, setErrors) => {
     const formattedNumber = formatPhoneNumber(input);
     //  update with formatted number
     setPhoneNumber(formattedNumber);
+    setErrors(errors);
   };
 
   return (

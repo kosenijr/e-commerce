@@ -4,7 +4,6 @@ import styles from "../styles/FormInput.module.css";
 const log = console.log;
 
 const FormInput = (props, onError, onHandleError) => {
-
   const handleInputChange = (e) => {
     let [inputValue, isValid] = [e.target.value, false];
 
@@ -18,19 +17,14 @@ const FormInput = (props, onError, onHandleError) => {
         isValid = /^[A-Za-z\s]+$/.test(inputValue);
         break;
       case "Email":
-        isValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+        
+      isValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
           inputValue
         );
         break;
-      // case "Phone Number":
-        // inputValue = formatPhoneNumber(inputValue); // Format phone number
-        // const formattedPhoneNumber = formatPhoneNumber(inputValue);
-        // setError(!/^\(\d{3}\) \d{3}-\d{4}$/.test(formattedPhoneNumber));
-        isValid = /^\(\d{3}\) \d{3}-\d{4}$/.test(inputValue);
-        // break;
-      case "State":
-        isValid = /^[A-Za-z]{2}$/.test(inputValue);
-        break;
+      // case "State":
+      //   isValid = /^[A-Za-z]{2}$/.test(inputValue);
+      //   break;
       case "Zip Code":
         isValid = /^\d{5}$/.test(inputValue);
         break;
@@ -57,7 +51,6 @@ const FormInput = (props, onError, onHandleError) => {
         {onError && (
           <p>Incorrect input. Please enter your {props.name.toLowerCase()}.</p>
         )}
-        {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}
       </section>
     </div>
   );

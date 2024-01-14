@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "../styles/Form.module.css";
 import FormInput from "./FormInput";
-import State from "./State";
 import PhoneNumberInput from "./PhoneNumberInput";
+import State from "./State";
 
 const log = console.log;
 
@@ -87,7 +87,6 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           name="Phone Number Input"
           value={values.phoneNumber}
           errors={errors.phoneNumber}
-          handleErrorChange={handleErrorChange}
           setErrors={(isError) => handleErrorChange("phoneNumber", isError)}
         />
 
@@ -120,7 +119,6 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           name="State"
           value={values.state}
           errors={errors.state}
-          handleErrorChange={handleErrorChange}
           setErrors={(isError) => handleErrorChange("state", isError)}
         />
 
