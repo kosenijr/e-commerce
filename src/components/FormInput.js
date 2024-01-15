@@ -54,7 +54,6 @@ const FormInput = (props) => {
         {errors && (
           <p>Incorrect input. Please enter your {props.name.toLowerCase()}.</p>
         )}
-        {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}
       </section>
     </div>
   );

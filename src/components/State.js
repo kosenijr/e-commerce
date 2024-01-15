@@ -4,7 +4,9 @@ import styles from "../styles/State.module.css";
 const log = console.log;
 
 // set up component
-const State = (errors, handleErrorChange, setErrors) => {
+const State = (props) => {
+const {errors, handleErrorChange, setErrors} = props;
+
   // set state
   const [selectedState, setSelectedState] = useState("");
 

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styles from "../styles/PhoneNumberInput.module.css";
 
-const PhoneNumberInput = (errors, setErrors) => {
 const log = console.log;
+
+const PhoneNumberInput = (props) => {
+   const {errors, setErrors} = props;
 
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -21,9 +23,10 @@ const log = console.log;
     const formattedNumber = formatPhoneNumber(input);
     //  update with formatted number
     setPhoneNumber(formattedNumber);
-    log(formattedNumber, input, formattedNumber !== input);
-    // setErrors(!/^\d+$/.test(input));
-    setErrors(errors);
+    // log(formattedNumber, input, formattedNumber !== input);
+    const isAMatch = formattedNumber === input;
+    log(props.errors, isAMatch);
+    setErrors(isAMatch);
   };
 
   return (
@@ -32,13 +35,12 @@ const log = console.log;
         <label>Phone Number</label>
         <input
           name="Phone Number"
-          type="text"
-          placeholder="(123) 456-7890"
-          value={phoneNumber}
           onChange={handleNumberChange}
+          placeholder="(123) 456-7890"
+          // type="number"
+          value={phoneNumber}
         />
       </section>
-
       <section className={styles["section-2"]}>
         {errors && <p>Incorrect input. Please select your state.</p>}
         {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}
