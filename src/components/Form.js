@@ -84,7 +84,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           errors={errors.email}
         />
         <PhoneNumberInput
-          name="Phone Number Input"
+          name="Phone Number"
           value={values.phoneNumber}
           errors={errors.phoneNumber}
           setErrors={(isError) => handleErrorChange("phoneNumber", isError)}

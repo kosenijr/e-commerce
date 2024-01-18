@@ -4,8 +4,7 @@ import styles from "../styles/PhoneNumberInput.module.css";
 const log = console.log;
 
 const PhoneNumberInput = (props) => {
-   const {errors, setErrors} = props;
-
+  const { errors, setErrors } = props;
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const formatPhoneNumber = (input) => {
@@ -23,10 +22,8 @@ const PhoneNumberInput = (props) => {
     const formattedNumber = formatPhoneNumber(input);
     //  update with formatted number
     setPhoneNumber(formattedNumber);
-    // log(formattedNumber, input, formattedNumber !== input);
-    const isAMatch = formattedNumber === input;
-    log(props.errors, isAMatch);
-    setErrors(isAMatch);
+    const phoneNumberRegex = /^(1\d{9}|\d{8}|\d{0,7})$/;
+    log(phoneNumberRegex.test(formattedNumber));
   };
 
   return (
@@ -37,13 +34,13 @@ const PhoneNumberInput = (props) => {
           name="Phone Number"
           onChange={handleNumberChange}
           placeholder="(123) 456-7890"
-          // type="number"
           value={phoneNumber}
         />
       </section>
       <section className={styles["section-2"]}>
-        {errors && <p>Incorrect input. Please select your state.</p>}
-        {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}
+        {errors && (
+          <p>Incorrect input. Please enter your {props.name.toLowerCase()}.</p>
+        )}
       </section>
     </div>
   );
