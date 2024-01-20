@@ -11,8 +11,7 @@ const Thanks = ({ onSubmit }) => {
     >
       <p>Thank you for your submission!</p>
       <p>
-        Please confirm your email to receive future Alternate-Side Parking
-        notifications.
+        Please confirm your email to start receiving notifications.
       </p>
     </div>
   );

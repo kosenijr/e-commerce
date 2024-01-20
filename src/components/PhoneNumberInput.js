@@ -22,8 +22,7 @@ const PhoneNumberInput = (props) => {
     const formattedNumber = formatPhoneNumber(input);
     //  update with formatted number
     setPhoneNumber(formattedNumber);
-    const phoneNumberRegex = /^(1\d{9}|\d{8}|\d{0,7})$/;
-    log(phoneNumberRegex.test(formattedNumber));
+    
   };
 
   return (

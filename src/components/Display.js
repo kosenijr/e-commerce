@@ -17,9 +17,10 @@ const Display = ({ onSubscribe, onHandleSubscribe }) => {
         </h3>
       </div>
       <div className={styles["display-section"]}>
-        <h4 className={styles["call-to-action"]}>
-          Be the first to know about alternate-side parking.
-        </h4>
+        <h3 className={styles["call-to-action"]}>
+          Subscribe to receive daily <span style={{color: "lightgreen"}}> alternate-side parking </span>
+          notifications.
+        </h3>
         <button
           className={styles["call-to-action-button"]}
           onClick={onHandleSubscribe}
