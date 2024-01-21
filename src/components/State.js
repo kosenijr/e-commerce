@@ -84,7 +84,7 @@ const State = ({ errors, handleErrorChange, setErrors }) => {
           onChange={handleStateChange}
         >
           <option className={styles["option-drop"]} value="">
-            Select ...
+            Select
           </option>
           {geoUS.map((state, index) => (
             <option
