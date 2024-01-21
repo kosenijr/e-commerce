@@ -129,6 +129,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           value={values.zipCode}
           setErrors={(isError) => handleErrorChange("zipCode", isError)}
           errors={errors.zipCode}
+
         />
         {/* button */}
         <button

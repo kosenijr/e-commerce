@@ -20,6 +20,10 @@ label {
 .user-form > * {
   margin: 4% 0%;
 }
+
+input[name="Zip Code"] {
+  width: 5vw;
+}
  
 .submit-button {
   color: white;

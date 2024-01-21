@@ -24,7 +24,7 @@ const FormInput = (props) => {
         break;
       case "Email":
         setErrors(
-          !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputValue),
+          !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputValue)
         );
         break;
       case "State":
@@ -45,9 +45,9 @@ const FormInput = (props) => {
         <label>{props.name}</label>
         <input
           name={props.name}
-          onChange={handleValueChange}
           placeholder={props.placeholder}
-          type="text"
+          onChange={handleValueChange}
+          maxLength={props.name === "Zip Code" ? 5 : undefined}
         />
       </section>
       <section className={styles["section-2"]}>
