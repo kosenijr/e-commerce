@@ -6,7 +6,7 @@ const log = console.log;
 // set up component
 const State = (props) => {
   // update props
-  const { errors, handleErrorChange, handleStateChange, geoUS, setErrors } = props;
+  const { errors, handleErrorChange, handleStateChange, setErrors } = props;
 
   // set state
   const [selectedState, setSelectedState] = useState("");
@@ -70,12 +70,8 @@ const State = (props) => {
     "WI",
     "WY",
   ];
-  // log(geoUS);
-
-  // set up change
-  const handleStateChange = (e) => {
-    setSelectedState(e.target.value);
-  };
+  
+  log(props);
 
   return (
     <div>
@@ -83,8 +79,8 @@ const State = (props) => {
         <label htmlFor="stateDropdown">State or Territory</label>
         <select
           id="stateDropdown"
-          value={selectedState}
-          onChange={handleStateChange}
+          value={props.value}
+          onChange={(e) => handleStateChange(e.target.value)}
           required="This is required."
         >
           <option className={styles["option-drop"]}>Select</option>
