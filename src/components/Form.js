@@ -7,6 +7,7 @@ import State from "./State";
 const log = console.log;
 
 const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
+
   // errors within fields
   const [errors, setErrors] = useState({
     firstName: false,
@@ -33,6 +34,10 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
     zipCode: "",
   });
 
+  // geo-state change
+  const [selectedState, setSelectedState] = useState("");
+  
+
   const handleErrorChange = (fieldName, isError) => {
     setErrors((prevErrors) => ({
       ...prevErrors,
@@ -41,6 +46,10 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
     // for submit button: must connect (hasAnyErrors)
     onHandleErrors(Object.values(errors).some((error) => error));
   };
+
+  const handleStateChange = () => {
+
+  }
 
   const handleValueChange = (e) => {
     setValues((prevValues) => ({

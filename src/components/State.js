@@ -4,7 +4,10 @@ import styles from "../styles/State.module.css";
 const log = console.log;
 
 // set up component
-const State = ({ errors, handleErrorChange, setErrors }) => {
+const State = (props) => {
+  // update props
+  const { errors, handleErrorChange, handleStateChange, geoUS, setErrors } = props;
+
   // set state
   const [selectedState, setSelectedState] = useState("");
 
@@ -82,10 +85,9 @@ const State = ({ errors, handleErrorChange, setErrors }) => {
           id="stateDropdown"
           value={selectedState}
           onChange={handleStateChange}
+          required="This is required."
         >
-          <option className={styles["option-drop"]} value="">
-            Select
-          </option>
+          <option className={styles["option-drop"]}>Select</option>
           {geoUS.map((state, index) => (
             <option
               className={styles["option-state"]}
@@ -97,9 +99,8 @@ const State = ({ errors, handleErrorChange, setErrors }) => {
           ))}
         </select>
       </section>
-
       <section className={styles["section-2"]}>
-        {errors && <p>Incorrect input. Please enter your phone number.</p>}
+        {errors && <p>{props.required}</p>}
         {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}
       </section>
     </div>
