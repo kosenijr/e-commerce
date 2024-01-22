@@ -22,7 +22,7 @@ label {
 }
 
 input[name="Zip Code"] {
-  width: 5vw;
+  width: 4;
 }
  
 .submit-button {

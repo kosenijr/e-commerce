@@ -31,7 +31,7 @@ const FormInput = (props) => {
         setErrors(!/^[A-Za-z]{2}$/.test(inputValue));
         break;
       case "Zip Code":
-        setErrors(!/^\d{5}$/.test(inputValue));
+        setErrors(!/^\d+$/.test(inputValue));
         break;
       default:
         setErrors(false); // No validation by default
