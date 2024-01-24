@@ -15,9 +15,6 @@ const FormInput = (props) => {
       case "City":
         setErrors(!/^[A-Za-z\s-]*$/.test(inputValue));
         break;
-      case "Address Line 2":
-        setErrors(!/^[A-Za-z0-9\s#-.]*$/.test(inputValue));
-        break;
       // case "Email":
       //   setErrors(
       //     !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputValue)
@@ -34,34 +31,35 @@ const FormInput = (props) => {
         break;
     }
   };
-  
+
   // on blur handling
   const handleInputBlur = (e) => {
     const inputValue = e.target.value;
-        switch (props.name) {
-          case "First Name":
-            case "Last Name":
-            case "City":
-              setErrors(!/^[A-Za-z\s-]*$/.test(inputValue));
-              break;
-          case "Address Line 1":
-            setErrors(!/^\d{1,5}[-\s]?\w*\.?\s[A-Za-z0-9\s#-]+$/i.test(inputValue));
-            break;
-            case "Email":
-              setErrors(!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputValue));
-              break;
-              default:
-                setErrors(false); // No validation by default
-                break;
-                            
-          }
-        };
-        
-        return (
-    <div
-      className={styles["formInput"]}
-      onChange={handleInputChange}
-    >
+    switch (props.name) {
+      case "First Name":
+      case "Last Name":
+      case "City":
+        setErrors(!/^[A-Za-z\s-]*$/.test(inputValue));
+        break;
+      case "Address Line 1":
+        setErrors(!/^\d{1,5}[-\s]?\w*\.?\s[A-Za-z0-9\s#-]+$/i.test(inputValue));
+        break;
+      case "Address Line 2":
+        setErrors(!/^[A-Za-z0-9\s#-.]*$/.test(inputValue));
+        break;
+      case "Email":
+        setErrors(
+          !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputValue),
+        );
+        break;
+      default:
+        setErrors(false); // No validation by default
+        break;
+    }
+  };
+
+  return (
+    <div className={styles["formInput"]} onChange={handleInputChange}>
       <section className={styles["section-1"]}>
         <label>{props.name}</label>
         <input
