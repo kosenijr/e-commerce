@@ -12,7 +12,7 @@ const PhoneNumberInput = (props) => {
 
     const formattedNumber = numericInput.replace(
       /(\d{3})(\d{3})(\d{4})$/,
-      "($1) $2-$3"
+      "($1) $2-$3",
     );
     return formattedNumber;
   };
@@ -24,7 +24,7 @@ const PhoneNumberInput = (props) => {
     //  update with formatted number
     setPhoneNumber(formattedNumber);
   };
- 
+
   return (
     <div>
       <section className={styles["section-1"]}>
@@ -35,6 +35,7 @@ const PhoneNumberInput = (props) => {
           placeholder="(555) 555-5555"
           value={phoneNumber}
           maxLength="14"
+          required="This is required."
         />
       </section>
       <section className={styles["section-2"]}>
