@@ -13,6 +13,7 @@ const Landing = () => {
   const handleErrors = () => {
     setHasErrors(!hasErrors);
   };
+  
 
   const handleSubscribe = () => {
     // console.log('this button works!');

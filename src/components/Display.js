@@ -1,8 +1,20 @@
 import React from "react";
 import styles from "../styles/Display.module.css";
+import { queryAllByAltText } from "@testing-library/react";
+
+const log = console.log;
 
 const Display = ({ onSubscribe, onHandleSubscribe }) => {
   // log(onSubscribe);
+
+  // key press
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      // e.preventDefault();
+      onHandleSubscribe();
+      log("just pressed enter")
+    }
+  }
 
   return (
     // onSubscribe passes subscribe which is false
@@ -10,6 +22,7 @@ const Display = ({ onSubscribe, onHandleSubscribe }) => {
       className={`${styles["display-container"]} ${
         styles[onSubscribe ? "no-display" : ""]
       }`}
+
     >
       <div className={styles["display-statement"]}>
         <h3 className={styles["display-header"]}>
@@ -24,6 +37,8 @@ const Display = ({ onSubscribe, onHandleSubscribe }) => {
         <button
           className={styles["call-to-action-button"]}
           onClick={onHandleSubscribe}
+          onKeyDown={handleKeyPress}
+
         >
           Subscribe
         </button>

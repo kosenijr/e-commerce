@@ -8,13 +8,12 @@ const FormInput = (props) => {
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
-
     // set up switch statement
     switch (props.name) {
       case "First Name":
       case "Last Name":
       case "City":
-        setErrors(!/^[A-Za-z\s-]+$/.test(inputValue));
+        setErrors(!/^[A-Za-z\s-]*$/.test(inputValue));
         break;
       case "Address Line 2":
         setErrors(!/^[A-Za-z0-9\s#-.]*$/.test(inputValue));
@@ -38,12 +37,18 @@ const FormInput = (props) => {
   
   // on blur handling
   const handleInputBlur = (e) => {
+    const inputValue = e.target.value;
         switch (props.name) {
+          case "First Name":
+            case "Last Name":
+            case "City":
+              setErrors(!/^[A-Za-z\s-]*$/.test(inputValue));
+              break;
           case "Address Line 1":
-            setErrors(!/^\d{1,5}[-\s]?\w*\.?\s[A-Za-z0-9\s#-]+$/i.test(e.target.value));
+            setErrors(!/^\d{1,5}[-\s]?\w*\.?\s[A-Za-z0-9\s#-]+$/i.test(inputValue));
             break;
             case "Email":
-              setErrors(!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value));
+              setErrors(!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputValue));
               break;
               default:
                 setErrors(false); // No validation by default

@@ -34,10 +34,6 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
     zipCode: "",
   });
 
-  // geo-state change
-  const [selectedState, setSelectedState] = useState("");
-
-
   const handleErrorChange = (fieldName, isError) => {
     setErrors((prevErrors) => ({
       ...prevErrors,
