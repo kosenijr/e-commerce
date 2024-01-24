@@ -7,7 +7,6 @@ import State from "./State";
 const log = console.log;
 
 const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
-
   // errors within fields
   const [errors, setErrors] = useState({
     firstName: false,
@@ -53,7 +52,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
       ...prevValues,
       [e.target.name]: e.target.value,
     }));
-    log(`Field ${e.target.name} changed to: ${e.target.value}`);
+    // log(`Field ${e.target.name} changed to: ${e.target.value}`);
     log();
   };
 
@@ -132,7 +131,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           setErrors={(isError) => handleErrorChange("city", isError)}
           errors={errors.city}
         />
-        
+
         {/* state */}
         <State
           name="State"
@@ -150,7 +149,6 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           value={values.zipCode}
           setErrors={(isError) => handleErrorChange("zipCode", isError)}
           errors={errors.zipCode}
-
         />
 
         {/* button */}

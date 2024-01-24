@@ -70,8 +70,8 @@ const State = (props) => {
     "WI",
     "WY",
   ];
-  
-  log(props);
+
+  // log(props);
 
   return (
     <div>
