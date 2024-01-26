@@ -58,7 +58,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
 
   // values and state
   const areAllValuesEntered = Object.values(values).every(
-    (value) => value.trim() !== ""
+    (value) => value.trim() !== "",
   );
   const isStateSelected = values.state.trim() !== "Select";
 
@@ -67,7 +67,11 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
     Object.values(errors).some((error) => error) ||
     !isStateSelected;
 
-    log(areA)
+  log(
+    `All Values Entered:${areAllValuesEntered}`,
+    `Any Errors: ${Object.values(errors).some((error) => error)}`,
+    `Was a state selected: ${isStateSelected}`,
+  );
 
   return (
     // <div
