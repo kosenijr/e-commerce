@@ -73,9 +73,14 @@ const FormInput = (props) => {
       </section>
       <section className={styles["section-2"]}>
         {errors && (
-          <p>{`${
-            props.name === "Zip Code" ? "Incorrect input." : "Please enter your"
-          } ${props.name.toLowerCase()}`}.</p>
+          <p>
+            {`${
+              props.name === "Zip Code"
+                ? "Incorrect input."
+                : "Please enter your"
+            } ${props.name.toLowerCase()}`}
+            .
+          </p>
         )}
       </section>
     </div>
