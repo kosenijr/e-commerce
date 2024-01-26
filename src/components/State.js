@@ -96,8 +96,7 @@ const State = (props) => {
         </select>
       </section>
       <section className={styles["section-2"]}>
-        {errors && <p>{props.required}</p>}
-        {/* <p>Incorrect input. Please enter a proper {props.value}.</p> */}
+        {errors && <p>{`Please select your ${props.name.toLowerCase()}.`}</p>}
       </section>
     </div>
   );

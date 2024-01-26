@@ -68,11 +68,14 @@ const FormInput = (props) => {
           onChange={handleValueChange}
           maxLength={props.name === "Zip Code" ? 5 : undefined}
           onBlur={handleInputBlur}
+          required
         />
       </section>
       <section className={styles["section-2"]}>
         {errors && (
-          <p>Incorrect input. Please enter your {props.name.toLowerCase()}.</p>
+          <p>{`${
+            props.name === "Zip Code" ? "Incorrect input." : "Please enter your"
+          } ${props.name.toLowerCase()}`}.</p>
         )}
       </section>
     </div>

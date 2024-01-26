@@ -40,7 +40,7 @@ const PhoneNumberInput = (props) => {
       </section>
       <section className={styles["section-2"]}>
         {errors && (
-          <p>Incorrect input. Please enter your {props.name.toLowerCase()}.</p>
+          <p>{`Incorrect input. Please enter your ${props.name.toLowerCase()}.`}</p>
         )}
       </section>
     </div>

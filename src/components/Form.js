@@ -39,7 +39,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
       [fieldName]: isError,
     }));
     // for submit button: must connect (hasAnyErrors)
-    onHandleErrors(Object.values(errors).some((error) => error));
+    // onHandleErrors(Object.values(errors).some((error) => error));
   };
 
   const handleStateChange = (state) => {
@@ -56,13 +56,31 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
     log();
   };
 
+  // values and state
+  const areAllValuesEntered = Object.values(values).every(
+    (value) => value.trim() !== ""
+  );
+  const isStateSelected = values.state.trim() !== "Select";
+
+  const shouldDisableSubmit =
+    !areAllValuesEntered ||
+    Object.values(errors).some((error) => error) ||
+    !isStateSelected;
+
+    log(areA)
+
   return (
+    // <div
+    // className={`${styles["form-container"]} ${
+    // styles[onFormDisplay ? "form-on" : "form-off"]
+    // } ${styles[onSubmit ? "form-off" : "form-on"]}`}
+    // >
     <div
       className={`${styles["form-container"]} ${
         styles[onFormDisplay ? "form-on" : "form-off"]
-      } ${styles[onSubmit ? "form-off" : "form-on"]}`}
+      }`}
     >
-      <form className={styles["user-form"]}>
+      <form className={styles["user-form"]} onSubmit={onHandleSubmit}>
         {/* form fields */}
 
         {/* first name */}
@@ -155,8 +173,8 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
         <button
           className={styles["submit-button"]}
           type="submit"
-          // disabled={!areAllValuesEntered || hasAnyErrors}
           onClick={onHandleSubmit}
+          disabled={shouldDisableSubmit}
         >
           Submit
         </button>
