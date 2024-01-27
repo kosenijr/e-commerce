@@ -4,7 +4,7 @@ import styles from "../styles/PhoneNumberInput.module.css";
 const log = console.log;
 
 const PhoneNumberInput = (props) => {
-  const { errors, setErrors } = props;
+  const { errors } = props;
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const formatPhoneNumber = (input) => {

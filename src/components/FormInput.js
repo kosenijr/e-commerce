@@ -4,7 +4,7 @@ import styles from "../styles/FormInput.module.css";
 const log = console.log;
 
 const FormInput = (props) => {
-  const { errors, handleValueChange, setErrors } = props;
+  const { errors, handleValueChange, setErrors, value } = props;
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
@@ -58,6 +58,8 @@ const FormInput = (props) => {
     }
   };
 
+  log(`value: ${value}`);
+
   return (
     <div className={styles["formInput"]} onChange={handleInputChange}>
       <section className={styles["section-1"]}>
@@ -68,6 +70,7 @@ const FormInput = (props) => {
           onChange={handleValueChange}
           maxLength={props.name === "Zip Code" ? 5 : undefined}
           onBlur={handleInputBlur}
+          value={value[`${props.name}`]}
           required
         />
       </section>
