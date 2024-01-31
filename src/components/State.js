@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../styles/State.module.css";
-
-const log = console.log;
 
 // set up component
 const State = (props) => {
   // update props
-  const { errors, handleErrorChange, handleStateChange, setErrors } = props;
-
-  // set state
-  const [selectedState, setSelectedState] = useState("");
+  const { errors, handleStateChange } = props;
 
   // set up geographic array
   const geoUS = [

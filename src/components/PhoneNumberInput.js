@@ -1,20 +1,31 @@
 import React, { useState } from "react";
 import styles from "../styles/PhoneNumberInput.module.css";
 
-const log = console.log;
-
 const PhoneNumberInput = (props) => {
-  const { errors } = props;
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const { errors, setErrors, value, handleValueChange } = props;
+  const [phoneNumber, setPhoneNumber] = useState(value);
 
   const formatPhoneNumber = (input) => {
     const numericInput = input.replace(/\D/g, "");
 
-    const formattedNumber = numericInput.replace(
+    // If the number starts with '1', omit it
+    const cleanedNumber = numericInput.startsWith("1")
+      ? numericInput.slice(1)
+      : numericInput;
+
+    const formattedNumber = cleanedNumber.replace(
       /(\d{3})(\d{3})(\d{4})$/,
-      "($1) $2-$3",
+      "($1) $2-$3"
     );
     return formattedNumber;
+  };
+
+  const handleInputChange = (e) => {
+    if (e.target.value.length < 10) {
+      setErrors(true);
+    } else {
+      setErrors(false);
+    }
   };
 
   const handleNumberChange = (e) => {
@@ -23,10 +34,11 @@ const PhoneNumberInput = (props) => {
     const formattedNumber = formatPhoneNumber(input);
     //  update with formatted number
     setPhoneNumber(formattedNumber);
+    handleValueChange({ target: { name: "Phone Number", value: input } });
   };
 
   return (
-    <div>
+    <div onBlur={handleInputChange}>
       <section className={styles["section-1"]}>
         <label>Phone Number</label>
         <input
@@ -40,7 +52,7 @@ const PhoneNumberInput = (props) => {
       </section>
       <section className={styles["section-2"]}>
         {errors && (
-          <p>{`Incorrect input. Please enter your ${props.name.toLowerCase()}.`}</p>
+          <p>{`Please enter your ${props.name.toLowerCase()}.`}</p>
         )}
       </section>
     </div>

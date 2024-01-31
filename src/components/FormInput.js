@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../styles/FormInput.module.css";
 
-const log = console.log;
 
 const FormInput = (props) => {
   const { errors, handleValueChange, setErrors, value } = props;
@@ -10,16 +9,6 @@ const FormInput = (props) => {
     const inputValue = e.target.value;
     // set up switch statement
     switch (props.name) {
-      case "First Name":
-      case "Last Name":
-      case "City":
-        setErrors(!/^[A-Za-z\s-]*$/.test(inputValue));
-        break;
-      // case "Email":
-      //   setErrors(
-      //     !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputValue)
-      //   );
-      //   break;
       case "State":
         setErrors(!/^[A-Za-z]{2}$/.test(inputValue));
         break;
@@ -35,9 +24,14 @@ const FormInput = (props) => {
   // on blur handling
   const handleInputBlur = (e) => {
     const inputValue = e.target.value;
+    // switch statement
     switch (props.name) {
       case "First Name":
+        setErrors(!/^[A-Za-z\s-]*$/.test(inputValue));
+        break;
       case "Last Name":
+        setErrors(!/^[A-Za-z\s-]*$/.test(inputValue));
+        break;
       case "City":
         setErrors(!/^[A-Za-z\s-]*$/.test(inputValue));
         break;
@@ -49,8 +43,11 @@ const FormInput = (props) => {
         break;
       case "Email":
         setErrors(
-          !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputValue),
+          !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(inputValue)
         );
+        break;
+      case "Zip Code":
+        setErrors(!/^\d+$/.test(inputValue));
         break;
       default:
         setErrors(false); // No validation by default
@@ -58,7 +55,7 @@ const FormInput = (props) => {
     }
   };
 
-  log(`value: ${value}`);
+  // log(`value: ${value}`);
 
   return (
     <div className={styles["formInput"]} onChange={handleInputChange}>
@@ -71,19 +68,21 @@ const FormInput = (props) => {
           maxLength={props.name === "Zip Code" ? 5 : undefined}
           onBlur={handleInputBlur}
           value={value[`${props.name}`]}
-          required
+          required="This is required."
         />
       </section>
       <section className={styles["section-2"]}>
         {errors && (
-          <p>
-            {`${
-              props.name === "Zip Code"
-                ? "Incorrect input."
-                : "Please enter your"
-            } ${props.name.toLowerCase()}`}
-            .
-          </p>
+          // <p>
+          //   {`${
+          //     props.name === "Zip Code"
+          //       ? "Incorrect input."
+          //       : props.name === "Address Line 1"
+          //       ? "Please enter your address."
+          //       : `Please enter your ${props.name.toLowerCase()}.`
+          //   }`}
+          // </p>
+          <p>{`Please enter your ${props.name.toLowerCase()}.`}</p>
         )}
       </section>
     </div>

@@ -24,12 +24,12 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
   let [values, setValues] = useState({
     "First Name": "",
     "Last Name": "",
-    "Email": "",
+    Email: "",
     "Phone Number": "",
     "Address Line 1": "",
     "Address Line 2": "",
-    "City": "",
-    "State": "",
+    City: "",
+    State: "Select",
     "Zip Code": "",
   });
 
@@ -38,8 +38,6 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
       ...prevErrors,
       [fieldName]: isError,
     }));
-    // for submit button: must connect (hasAnyErrors)
-    // onHandleErrors(Object.values(errors).some((error) => error));
   };
 
   const handleStateChange = (state) => {
@@ -55,18 +53,21 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
     // log(`Field ${e.target.name} changed to: ${e.target.value}`);
   };
 
-  // values and state
+  // are values entered?
   const areAllValuesEntered = Object.values(values).every(
-    (value) => value.trim() !== "",
+    (value) => value.trim() !== ""
   );
-  const isStateSelected = values.State.trim() !== "Select";
 
+  // is there a selected U.S. State?
+  const isStateSelected = values["State"] !== "Select";
+
+  // disable submit button?
   const shouldDisableSubmit =
     !areAllValuesEntered ||
     Object.values(errors).some((error) => error) ||
     !isStateSelected;
 
-    log(values);
+  log(values);
 
   log(`
   All Values Entered:${areAllValuesEntered},
@@ -75,17 +76,12 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
   `);
 
   return (
-    // <div
-    // className={`${styles["form-container"]} ${
-    // styles[onFormDisplay ? "form-on" : "form-off"]
-    // } ${styles[onSubmit ? "form-off" : "form-on"]}`}
-    // >
     <div
       className={`${styles["form-container"]} ${
         styles[onFormDisplay ? "form-on" : "form-off"]
-      }`}
+      } ${styles[onSubmit ? "form-off" : "form-on"]}`}
     >
-      <form className={styles["user-form"]} onSubmit={onHandleSubmit}>
+      <form className={styles["user-form"]}>
         {/* form fields */}
 
         {/* first name */}
@@ -120,6 +116,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
         {/* phone number */}
         <PhoneNumberInput
           name="Phone Number"
+          handleValueChange={(e) => handleValueChange(e)}
           value={values["Phone Number"]}
           errors={errors.phoneNumber}
           setErrors={(isError) => handleErrorChange("phoneNumber", isError)}
@@ -130,7 +127,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           name="Address Line 1"
           placeholder="123 Main Street"
           handleValueChange={(e) => handleValueChange(e)}
-          value={values.addressLine1}
+          value={values["Address Line 1"]}
           setErrors={(isError) => handleErrorChange("addressLine1", isError)}
           errors={errors.addressLine1}
         />
@@ -140,7 +137,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           name="Address Line 2"
           placeholder="Apt #305"
           handleValueChange={(e) => handleValueChange(e)}
-          value={values.addressLine2}
+          value={values["Address Line 2"]}
           setErrors={(isError) => handleErrorChange("addressLine2", isError)}
           errors={errors.addressLine2}
         />
@@ -150,7 +147,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           name="City"
           placeholder="Anytown"
           handleValueChange={(e) => handleValueChange(e)}
-          value={values.city}
+          value={values["City"]}
           setErrors={(isError) => handleErrorChange("city", isError)}
           errors={errors.city}
         />
@@ -158,7 +155,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
         {/* state */}
         <State
           name="State"
-          value={values.state}
+          value={values["State"]}
           errors={errors.state}
           setErrors={(isError) => handleErrorChange("state", isError)}
           handleStateChange={handleStateChange}
@@ -169,7 +166,7 @@ const Form = ({ onFormDisplay, onHandleErrors, onSubmit, onHandleSubmit }) => {
           name="Zip Code"
           placeholder="12345"
           handleValueChange={(e) => handleValueChange(e)}
-          value={values.zipCode}
+          value={values["Zip Code"]}
           setErrors={(isError) => handleErrorChange("zipCode", isError)}
           errors={errors.zipCode}
         />
