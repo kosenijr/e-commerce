@@ -1,3 +1,43 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:70391400fc03b859da272db36c4df4b023aa8c03a0acf4f4a070322c9f78a6d4
-size 861
+// requirements
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+// general variables
+const [app, log, port] = [express(), console.log, 5000];
+
+// use cors
+app.use(cors());
+
+// fetch and handle the data
+// variable
+
+// fetching
+async function getData(url=311_URL, data = {}) {
+
+const response = await fetch(311_URL, {
+  method: "GET",
+  mode: "cors",
+  cache: "no-cache",
+  credentials: "same-origin",
+
+  headers: {
+    "Content-Type": "application/json",
+    "Ocp-Apim-Subscription-Key": SUBSCRIPTION_KEY
+  },
+  redirect: "follow",
+  referrerPolicy: "no-referrer",
+  body: JSON.stringify(data),
+});
+return response.json();
+}
+
+
+
+
+// are we listening?
+app.listen(port, function () {
+  console.log(`Server is listening on Port: ${port}.`);
+});
+
+
+// run nodemon: npm run watch.

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:083512020b117d76fbf485ca4bd8ece8956e75aa927ddcf818b14067802e81b5
-size 184
+import React from 'react'
+import '../styles/fo'
+
+const Form = () => {
+    return (
+        <div className="asp-form"><span>City Photo</span></div>
+    )
+}
+
+export default Form

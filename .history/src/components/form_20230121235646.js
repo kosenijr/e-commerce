@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ef6d8aeb8e6afcfee30916653c464a151a3ee45cd54ede0f8f8620ee88c7485
-size 702
+import React from 'react'
+import styles from '../styles/Form.module.css'
+
+const Form = () => {
+    // set up useStake hooks for differ
+    return (
+        <div className={styles['form-container']}>
+            <div className={styles['form-statement']}>
+                <h3 className={styles['form-header-1']}>
+                    Not sure if you have to move your vehicle today?
+                </h3>
+
+                <h3 className={styles['form-header-2']}>
+                    Please subscribe to stay informed:
+                </h3>
+            </div>
+            <div className={styles['form-intake']}>
+
+            </div>
+
+
+
+
+        </div>
+    )
+}
+
+export default Form

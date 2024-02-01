@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6bc5ba0507e73b0532afd385b86e23ebcdef5c89c2fc6ea341f8642118b2dca8
-size 152
+import styles from '../styles/Logo.module.css'
+
+
+const Logo = () => {
+    return <img id={styles['asp-logo']} src='../' />
+}
+
+export default Logo

@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eeae0935963402f19dffb49071c90d9e47b01fc10900d9e93c9bc0f7a4885d62
-size 483
+// requirements
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+// general variables
+const [app, log, port] = [express(), console.log, 5000];
+
+// logging env
+log(process.env)
+
+// use cors
+app.use(cors());
+
+// fetch and handle the data
+// variable
+
+// fetching
+
+
+
+
+
+// are we listening?
+app.listen(port, function () {
+  console.log(`Server is listening on Port: ${port}.`);
+});
+
+
+// run nodemon: npm run watch.

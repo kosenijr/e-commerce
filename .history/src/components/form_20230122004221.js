@@ -1,3 +1,79 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93f422a4db6d7bff6b8ff7fc8db3972e1d68e0ea92bc1998cedad45e221edc9e
-size 2912
+import React, { useState } from 'react'
+import styles from '../styles/Form.module.css'
+
+const Form = () => {
+    // set up useStake hooks for different types of information
+    // name, email, text number, address (optional)
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [number, setNumber] = useState('');
+    const [address, setAddress] = useState('');
+
+    // handling changes to each state
+    const handleNameChange = (e) => {
+
+    };
+
+    const handleEmailChange = (e) => {
+
+    };
+
+    const handleNumberChange = (e) => {
+
+    };
+
+    const handleAddressChange = (e) => {
+
+    };
+
+    const handleSubmit = (e) => {
+
+    }
+
+    // rendering of the above.
+    return (
+        <div className={styles['form-container']}>
+            <div className={styles['form-statement']}>
+                <h3 className={styles['form-header-1']}>
+                    Not sure if you have to move your vehicle today?
+                </h3>
+
+                <h3 className={styles['form-header-2']}>
+                    Please subscribe to stay informed:
+                </h3>
+            </div>
+            <div className={styles['form-intake']}>
+                Name:
+                <div className="input-wrapper"> <input type="text" className="contact-name-input" onChange={handleNameChange} value={name} placeholder='please enter your full name' /></div>
+                <br />
+                Email:
+                <div className="input-wrapper"> <input type="text" className="contact-mail-input" onChange={handleEmailChange} value={email} placeholder='please enter your email' /></div>
+                <br />
+                Text:
+                <div className="input-wrapper"> <input type="text" className="contact-message-input" onChange={handleNumberChange} value={number} placeholder='please enter your phone number to receive text' /></div>
+                <br />
+                <div className={style=}"inputs-container">
+                    Do you prefer an email or text notification?
+                    <div>
+                        <input type="radio" id="email" name="e-mail" value="selectEmail" />
+                        <label for="email">email</label>
+                    </div><div>
+                        <input type="radio" id="text" name="drone" value="electText" />
+                        <label for="text">text</label>
+                    </div>
+                </div>
+                <br />
+                Address:
+                <div className="input-wrapper"> <input type="text" className="contact-message-input" onChange={handleNumberChange} value={number} placeholder='this message' /></div>
+                <br />
+                <button type='submit' onClick={handleSubmit}>Submit</button>
+            </div>
+
+
+
+
+        </div>
+    )
+}
+
+export default Form

@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:25e9cdf3328e035f6cf00663f36a3918c8f68b200c72d7264052738df9adcdef
-size 500
+import React, { useEffect, useState } from "react";
+
+const log = console.log;
+
+// get useEffect for fetch api
+// log(process.env.URL_311);
+
+const Client = () => {
+  const [details, setDetails] = useState({});
+
+  useEffect(() => {
+    const fetchData = fetch("https://ttzswd-5000.csb.app")
+      .then((res) => res.json())
+      .then((data) => log(data))
+      .catch((err) => console.error(`Error: ${err}`));
+  }, []);
+
+  return ()
+  <p>Hey</p>
+  )
+};
+
+export default Client;

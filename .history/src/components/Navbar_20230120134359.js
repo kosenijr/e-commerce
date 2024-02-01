@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3fef8be19ccac520012138fa2be6f376e0db48a95b07c9c768ad2395bf652c0f
-size 752
+
+
+const Navbar = () => {
+    // return (
+        // <header className="App-header">
+        //     {/* <div className='sub-header-1 flexing'>
+        //         <span>logo</span>
+        //         <span>user greeting</span>
+        //         <span>search icon</span>
+        //         <span>cart icon</span>
+        //     </div>
+        //     <div className='sub-header-2 flexing'>
+        //         <span>category line</span>
+        //     </div>
+        //     <div className='sub-header-3 flexing'>
+        //         <span>help line</span>
+        //     </div> */}
+        // </header>
+    // )
+    // __________________________________________________
+    return (
+        header
+    )
+}
+
+
+
+export default Navbar

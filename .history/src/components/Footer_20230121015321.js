@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:348a9b6dd0d492d05a51da589446fee6e2019db3ff9ee61da166944acd48a085
-size 212
+import styles from '../styles/Footer.module.css'
+
+const Footer = () => {
+    return (
+        <div className="footer-container">
+            <span></span>
+        </div>
+    )
+}
+
+export default Footer

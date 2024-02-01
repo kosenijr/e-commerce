@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:23511bb8425564a3cb4c2a7fb300c86156c0bdfbe32f9f9cc9b8ca2e5ca582f9
-size 214
+import Layout from './Layout'
+
+
+const Home = () => {
+    return (
+        <Layout >
+            <div className="jumbotron"><span>jambotron</span></div>
+
+        </Layout >
+
+    )
+}
+
+export default Home

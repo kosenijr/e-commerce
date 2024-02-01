@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c2970160f66b6ab3853c737ebd480615f540a80675014c8c902c6cc8c4d029c
-size 592
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+const Navbar = () => {
+    return (
+        <header className="App-header">
+            <div className='sub-header-1 flexing'>
+                <span>logo</span>
+                <span>user greeting</span>
+                <span>search icon</span>
+                <span>cart icon</span>
+            </div>
+            <div className='sub-header-2 flexing'>
+                <span>Our Products</span>
+                <span>Checkout</span>
+            </div>
+
+        </header>
+    )
+}
+
+
+
+export default Navbar

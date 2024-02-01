@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f24a8a0784b5517b574431413a211a44e600d37e7eee2bea6c566ee4a34919b
-size 508
+// requirements
+const express = require("express");
+const fetch = require("node-fetch");
+// general variables
+const [app, port] = [express(), 5000];
+
+// fetch?
+fetch("https://api.nyc.gov/public")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+// what are we getting
+app.get(`/`, async function (req, res) {
+  await res.send(data);
+});
+
+// are we listening?
+app.listen(port, function () {
+  console.log(`Server is working now. It is listening on Port: ${port}.`);
+});

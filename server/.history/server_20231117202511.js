@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3fe9cdac746e0276ec671e8d9784c89e3f4c771fd5c10ec5bbe858b0754fc156
-size 741
+// requirements
+const express = require("express");
+// general variables
+const [app, log, port] = [express(), console.log, 5000];
+
+// fetch and handle the data
+// variable
+let fetchedData;
+
+// fetching
+fetch("https://api.nyc.gov/public/api/GetCalendar?fromdate={05052023}&todate={05052023}")
+  .then((res) => res.json())
+  .then((data) => {
+    fetchedData = data;
+    log("Data fetched successfully.");
+  })
+  .catch((error) => console.error(`Error fetching data:, ${error}`));
+
+// what are we getting
+app.get("/", function (req, res) {
+  res.send(fetchedData);
+});
+
+// are we listening?
+app.listen(port, function () {
+  console.log(`Server is listening on Port: ${port}.`);
+});
+
+
+// run nodemon: npm run watch.

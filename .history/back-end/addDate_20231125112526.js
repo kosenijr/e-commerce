@@ -1,3 +1,62 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:95585d008400e0681c950eb2dd6c661a6b623c45a4d4d9d2011d18a977325f0a
-size 1188
+// requirements
+
+// variables
+const log = console.log;
+const inputDate = 20231125;
+let fullDate;
+
+// create a pure function
+
+// extract year, month, and day from input
+const year = Math.floor(rawDate / 10000);
+const month = Math.floor((rawDate % 10000) / 100);
+const day = rawDate % 100;
+
+// formatted the date
+const formattedDate = new Date(year, month - 1, day);
+// log(formattedDate);
+
+// set up arrays for days and months
+const weekDays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+// log(year, month, day);
+
+// get weekday and month names
+  const weekDayName = weekDays[formattedDate.getDay()];
+  const monthName = months[formattedDate.getMonth()];
+  
+  // do a check
+  const getFullDate = (rawDate) => {
+  return fullDate = `${weekDayName}, ${monthName} ${day}, ${year}`;
+  
+  
+  
+} 
+  // full Date
+  log(getFullDate(inputDate));
+  
+  // exporting fullDate variable
+  // module.exports = fullDate;
+  

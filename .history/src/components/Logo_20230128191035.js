@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6d4ae119f640ae92043bb8aaada9b8f644427de740205a5d7672451c822cc526
-size 187
+import styles from '../styles/Logo.module.css'
+import img from '../tf_logo/TicketFree.jpg'
+
+
+const Logo = () => {
+    return <img id={styles['asp-logo']} />
+}
+
+export default Logo

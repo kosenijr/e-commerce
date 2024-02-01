@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c65ab328f104ee566aba1ae426ec39fe44d1f78c64723e22fdc4d82d0e8435d5
-size 346
+import styles from './styles/App.module.css'
+import Landing from './components/Landing'
+import server from '../back-end/server'
+import Client from './components/Client'
+
+function App() {
+  return (
+    <div className={styles['App']} id={styles['overlay']}>
+      <Landing />
+      <Client/>
+    </div>
+  );
+}
+
+export default App;
+;

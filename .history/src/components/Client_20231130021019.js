@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b372ae898f757b646dc082b64b5982bc8eb5615efd53b1376b7afaf289a52624
-size 502
+import React, {useEffect, useState} from 'react'
+import {urlWithParams} from '../back-end/server'
+// get useEffect for fetch api
+
+const log = console.log;
+
+const Client = () => {
+    const [details, setDetails] = useState({})
+
+    useEffect(() => {
+        fetch(urlWithParams)
+        .then((res) => res.json)
+        .then((data) => log(data))
+        .catch((err) => console.error(`Error: ${err}`));
+    }, []);
+   
+    return (
+        <p>Hey</p>
+    )
+}
+
+export default Client

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2e5c6f0dee6426ce3e498a2373bdc1924082d17396d756a1e885073baaca1e6d
-size 304
+import styles from '../styles/Logo.module.css'
+import Image from '../../src/images/double-parking-1.jfif'
+
+
+const Logo = () => {
+    return (
+        <div id={styles['asp-logo']}>
+            <Image className={styles['logo-image']} />
+        {/* </div> */}
+
+    )
+
+
+
+}
+export default Logo

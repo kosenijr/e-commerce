@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:27f97a5be5420f8c9ac560f5f1633546ec20a8ac4d122fe5c73c3d95357cd434
-size 846
+module.exports = {
+  resolve: {
+    fallback: {
+      crypto: require.resolve("crypto-browserify"),
+      stream: require.resolve("stream-browserify"),
+      util: require.resolve("util/"),
+      assert: require.resolve("assert/"),
+      http: require.resolve("stream-http"),
+      https: require.resolve("https-browserify"),
+      os: require.resolve("os-browserify/browser"),
+      path: require.resolve("path-browserify"),
+      fs: false, // or require.resolve('fs'),
+      url: require.resolve("url/"), // Add this line for url
+      buffer: require.resolve("buffer/"),
+      net: false, // or require.resolve('net'),
+      tls: false, // or require.resolve('tls'),
+      constants: require.resolve("constants-browserify"),
+      // Add this line for buffer
+      // Add other required modules as needed
+    },
+  },
+};
