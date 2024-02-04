@@ -1,6 +1,0 @@
-
-
-const Logo = () => {
-    return (
-        <div)
-}

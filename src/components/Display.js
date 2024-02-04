@@ -16,13 +16,13 @@ const Display = ({ onSubscribe, onHandleSubscribe }) => {
     >
       <div className={styles["display-statement"]}>
         <h3 className={styles["display-header"]}>
-          Not sure if you have to move your vehicle today?
+          Want to subscribe?
         </h3>
       </div>
       <div className={styles["display-section"]}>
         <h3 className={styles["call-to-action"]}>
           Subscribe to receive daily{" "}
-          <span style={{ color: "lightgreen" }}> alternate-side parking </span>
+          <span style={{ color: "lightgreen" }}> fun </span>
           notifications.
         </h3>
         <button
